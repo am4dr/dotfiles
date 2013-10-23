@@ -1,6 +1,6 @@
 [user]
-	name = urasa
-	email = ursk4git@live.jp
+	name = tf_octo
+	email = t.f.octo@gmail.com
 [core]
 	editor = vim -c \"set fenc=utf-8\"
 	excludesfile = ~/.global_ignore
