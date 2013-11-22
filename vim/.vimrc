@@ -83,6 +83,9 @@ set softtabstop=4
 set shiftwidth=4
 set smartindent
 
+" don't register IME state for insert-mode
+inoremap <silent> <Esc> <Esc>:set iminsert=0<CR>
+
 " don't leave the buckup files
 set backupdir=~/.vim/tmp
 
