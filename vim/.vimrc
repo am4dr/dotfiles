@@ -83,6 +83,8 @@ set softtabstop=4
 set shiftwidth=4
 set smartindent
 
+" Entering insert mode or search mode, IME is turned off
+set iminsert=0 imsearch=0
 " don't register IME state for insert-mode
 inoremap <silent> <Esc> <Esc>:set iminsert=0<CR>
 
