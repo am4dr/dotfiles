@@ -28,6 +28,8 @@ NeoBundle 'Shougo/vinarise.vim'
 NeoBundle 'thinca/vim-quickrun'
 NeoBundle 'tpope/vim-surround'
 NeoBundle 'tpope/vim-fugitive'
+NeoBundle 'koron/codic-vim'
+NoeBundle 'glidenote/memolist.vim'
 " syntax
 NeoBundle 'beyondmarc/glsl.vim'
 " color
