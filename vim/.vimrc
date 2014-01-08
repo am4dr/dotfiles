@@ -1,35 +1,22 @@
 " neobundle.vim
-set nocompatible               " Be iMproved
 
 if has('vim_starting')
+    set nocompatible
 	set runtimepath+=~/vimfiles/bundle/neobundle.vim/
 endif
 call neobundle#rc(expand('~/vimfiles/bundle/'))
 
 filetype plugin indent on
 
-" NeoBundle Installation check.
-if neobundle#exists_not_installed_bundles()
-	echomsg 'Not installed bundles : ' .
-		\ string(neobundle#get_not_installed_bundle_names())
-	echomsg 'Please execute ":NeoBundleInstall" command.'
-	"finish
-endif
-
-" plugins
-NeoBundle 'Lokaltog/powerline', {'rtp' : 'powerline/bindings/vim'}
 NeoBundle 'Shougo/neobundle.vim'
-NeoBundle 'Shougo/neocomplcache'
 NeoBundle 'Shougo/unite.vim'
 NeoBundle 'Shougo/vimfiler.vim'
 NeoBundle 'Shougo/vimproc'
 NeoBundle 'Shougo/vimshell'
 NeoBundle 'Shougo/vinarise.vim'
-NeoBundle 'thinca/vim-quickrun'
 NeoBundle 'tpope/vim-surround'
 NeoBundle 'tpope/vim-fugitive'
 NeoBundle 'koron/codic-vim'
-NoeBundle 'glidenote/memolist.vim'
 " syntax
 NeoBundle 'beyondmarc/glsl.vim'
 " color
@@ -49,13 +36,13 @@ colorscheme molokai
 " end
 " autocmd GUIEnter * colorscheme molokai
 
-" powerline
-set laststatus=2
+NeoBundle 'Lokaltog/powerline', {'rtp' : 'powerline/bindings/vim'}
+set laststatus=2 "need to show
 
-" neocomplcache
+NeoBundle 'Shougo/neocomplcache'
 let g:neocomplcache_enable_at_startup = 1
 
-" quickrun
+NeoBundle 'thinca/vim-quickrun'
 let g:quickrun_config = {
 \   "_" : {
 \       "outputter/buffer/split" : ":botright 10sp",
@@ -65,6 +52,12 @@ let g:quickrun_config = {
 \       "runner/vimproc/updatetime" : 500
 \   },
 \}
+
+NeoBundle 'glidenote/memolist.vim'
+let g:memolist_path = '~/Dropbox/works/Memo'
+
+NeoBundleCheck
+
 
 " show number
 set number
