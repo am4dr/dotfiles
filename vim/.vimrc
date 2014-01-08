@@ -89,7 +89,7 @@ set iminsert=0 imsearch=0
 inoremap <silent> <Esc> <Esc>:set iminsert=0<CR>
 
 " don't leave the buckup files
-set backupdir=~/.vim/tmp
+set backupdir=~/vimfiles/tmp
 
 " to move cursor between the split screen
 nmap <Left> h
