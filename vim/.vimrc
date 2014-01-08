@@ -58,6 +58,8 @@ let g:quickrun_config = {
 NeoBundle 'glidenote/memolist.vim'
 let g:memolist_path = '~/Dropbox/works/Memo'
 
+NeoBundle 'vim-scripts/autodate.vim'
+
 NeoBundleCheck
 
 
