@@ -2,7 +2,7 @@
 
 set DF_DIR=%HOME%\dotfiles
 set LINK_FILES=.gitconfig .global_ignore .vimrc .gvimrc .conkyrc .Xmodmap .tmux.conf
-set LINK_DIRS=.vim .emacs.d
+set LINK_DIRS=vimfiles .emacs.d
 set LINK_TARGET=git vim emacs
 
 rem mode selection
@@ -55,7 +55,7 @@ exit /b
 :vim
 mklink %HOME%\.vimrc %DF_DIR%\vim\.vimrc
 mklink %HOME%\.gvimrc %DF_DIR%\vim\.gvimrc
-mklink /D %HOME%\.vim %DF_DIR%\vim
+mklink /D %HOME%\vimfiles %DF_DIR%\vim
 exit /b
 
 :emacs
