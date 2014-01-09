@@ -10,9 +10,11 @@ filetype plugin indent on
 
 NeoBundle 'Shougo/neobundle.vim'
 NeoBundle 'Shougo/unite.vim'
-let g:unite_enable_start_insert=1
+let g:unite_enable_start_insert = 1
 
 NeoBundle 'Shougo/vimfiler.vim'
+let g:vimfiler_as_default_explorer = 1
+
 NeoBundle 'Shougo/vimproc'
 NeoBundle 'Shougo/vimshell'
 NeoBundle 'Shougo/vinarise.vim'
@@ -59,9 +61,13 @@ NeoBundle 'glidenote/memolist.vim'
 let g:memolist_path = '~/Dropbox/works/Memo'
 let g:memolist_memo_date = '%Y-%m-%d %H:%M:%S'
 let g:memolist_template_dir_path = '~/vimfiles/misc/memolist_templates'
+let g:memolist_qfixgrep = 1
 
 NeoBundle 'vim-scripts/autodate.vim'
 let g:autodate_format = '%Y-%m-%d %H:%M:%S'
+
+NeoBundle 'fuenor/qfixgrep'
+
 
 NeoBundleCheck
 
