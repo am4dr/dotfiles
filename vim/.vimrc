@@ -68,6 +68,7 @@ let g:autodate_format = '%Y-%m-%d %H:%M:%S'
 
 NeoBundle 'fuenor/qfixgrep'
 
+NeoBundle 'vim-jp/vimdoc-ja'
 
 NeoBundleCheck
 
