@@ -35,10 +35,6 @@ set t_Co=256
 syntax on
 set background=dark
 colorscheme molokai
-" if !has('gui_running')
-"     autocmd VimEnter * GuiColorScheme molokai
-" end
-" autocmd GUIEnter * colorscheme molokai
 
 NeoBundle 'Lokaltog/powerline', {'rtp' : 'powerline/bindings/vim'}
 set laststatus=2 "need to show
