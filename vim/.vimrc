@@ -108,6 +108,10 @@ nmap <Right> l
 nmap <Up> k
 nmap <Down> j
 
+" VimShell
+command Vs VimShell
+command Vsp VimShellPop
+
 " gtags
 nmap <C-n> :cn<CR>
 nmap <C-p> :cp<CR>
