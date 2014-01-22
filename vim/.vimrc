@@ -69,6 +69,9 @@ NeoBundle 'vim-jp/vimdoc-ja'
 
 NeoBundleCheck
 
+" backspace deletes fixed letters
+set backspace=start
+
 " encoding settings
 " fileencodings: for auto-detection
 " encoding: internal file encoding
