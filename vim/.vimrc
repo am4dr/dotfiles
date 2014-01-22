@@ -26,6 +26,7 @@ NeoBundle 'beyondmarc/glsl.vim'
 " color
 NeoBundle 'thinca/vim-guicolorscheme'
 NeoBundle 'ujihisa/unite-colorscheme'
+NeoBundle 'vim-scripts/AfterColors.vim'
 " colorschemes
 NeoBundle 'altercation/vim-colors-solarized'
 NeoBundle 'nanotech/jellybeans.vim'
