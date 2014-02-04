@@ -34,9 +34,9 @@ NeoBundle 'nanotech/jellybeans.vim'
 NeoBundle 'tomasr/molokai'
 NeoBundle 'vim-scripts/Wombat'
 set t_Co=256
-syntax on
 set background=dark
 colorscheme molokai
+syntax on
 
 NeoBundle 'Lokaltog/powerline', {'rtp' : 'powerline/bindings/vim'}
 set laststatus=2 "need to show
