@@ -73,6 +73,8 @@ NeoBundleCheck
 
 set hlsearch
 
+set cursorline
+
 " backspace deletes fixed letters
 set backspace=start,indent
 
