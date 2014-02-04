@@ -105,7 +105,6 @@ set iminsert=0 imsearch=0
 " don't register IME state for insert-mode
 inoremap <silent> <Esc> <Esc>:set iminsert=0<CR>
 
-" don't leave the buckup files
 set backupdir=~/vimfiles/tmp
 
 " to move cursor between the split screen
