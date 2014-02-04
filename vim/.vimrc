@@ -71,6 +71,8 @@ NeoBundle 'vim-jp/vimdoc-ja'
 
 NeoBundleCheck
 
+set hlsearch
+
 " backspace deletes fixed letters
 set backspace=start,indent
 
