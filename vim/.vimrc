@@ -72,7 +72,7 @@ NeoBundle 'vim-jp/vimdoc-ja'
 NeoBundleCheck
 
 " backspace deletes fixed letters
-set backspace=start
+set backspace=start,indent
 
 " encoding settings
 " fileencodings: for auto-detection
