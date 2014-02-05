@@ -75,6 +75,8 @@ set hlsearch
 
 set cursorline
 
+set scrolloff=1
+
 " backspace deletes fixed letters
 set backspace=start,indent
 
