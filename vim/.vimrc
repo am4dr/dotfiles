@@ -85,8 +85,8 @@ set backspace=start,indent
 set encoding=utf-8
 set fileencodings=ucs-bom,utf-8,iso-2022-jp,euc-jp,sjis,cp932,latin1
 
-" show number
-set number
+set number " show number
+set ruler  " show ruler
 
 " always display tabs
 set showtabline=2
