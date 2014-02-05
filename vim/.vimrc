@@ -112,18 +112,18 @@ inoremap <silent> <Esc> <Esc>:set iminsert=0<CR>
 set backupdir=~/vimfiles/tmp
 
 " to move cursor between the split screen
-nmap <Left> h
-nmap <Right> l
-nmap <Up> k
-nmap <Down> j
+nnoremap <Left> h
+nnoremap <Right> l
+nnoremap <Up> k
+nnoremap <Down> j
 
 " VimShell
 command Vs VimShell
 command Vsp VimShellPop
 
 " gtags
-nmap <C-n> :cn<CR>
-nmap <C-p> :cp<CR>
-nmap <C-g> :Gtags 
-nmap <C-h> :Gtags -f %<CR>
-nmap <C-k> :GtagsCursor<CR>
+nnoremap <C-n> :cn<CR>
+nnoremap <C-p> :cp<CR>
+nnoremap <C-g> :Gtags 
+nnoremap <C-h> :Gtags -f %<CR>
+nnoremap <C-k> :GtagsCursor<CR>
