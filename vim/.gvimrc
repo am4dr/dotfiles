@@ -1,2 +1,2 @@
 colorschem molokai
-set guioptions-=T
+set guioptions-=mT
