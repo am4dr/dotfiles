@@ -1,2 +1,3 @@
 colorschem molokai
-set guioptions-=mT
+set guioptions-=m   " メニュー非表示
+set guioptions-=T   " ツールバー非表示
