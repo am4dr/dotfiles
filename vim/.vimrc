@@ -13,7 +13,6 @@ NeoBundle 'Shougo/neobundle.vim'
 NeoBundle 'Shougo/unite.vim'
 let g:unite_enable_start_insert = 1
 NeoBundle 'Shougo/unite-session'
-let g:unite_source_session_enable_auto_save = 1
 
 NeoBundle 'Shougo/vimfiler.vim'
 let g:vimfiler_as_default_explorer = 1
