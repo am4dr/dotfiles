@@ -46,6 +46,7 @@ let g:Powerline_symbols = 'fancy'
 
 NeoBundle 'Shougo/neocomplcache'
 let g:neocomplcache_enable_at_startup = 1
+let g:neocomplcache_enable_insert_char_pre = 1
 
 NeoBundle 'thinca/vim-quickrun'
 let g:quickrun_config = {
