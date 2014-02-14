@@ -8,7 +8,7 @@ call neobundle#rc(expand('~/vimfiles/bundle/'))
 
 filetype plugin indent on
 
-NeoBundle 'Shougo/neobundle.vim'
+NeoBundleFetch 'Shougo/neobundle.vim'
 
 NeoBundle 'Shougo/unite.vim'
 let g:unite_enable_start_insert = 1
