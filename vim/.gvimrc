@@ -5,3 +5,4 @@ set guioptions-=l   " スクロールバーの非表示(常に左)
 set guioptions-=L   " スクロールバーの非表示(分割時のみ左)
 set guioptions-=r   " スクロールバーの非表示(常に右)
 set guioptions-=R   " スクロールバーの非表示(分割時のみ右)
+set guioptions-=e   " タブをCUI風に
