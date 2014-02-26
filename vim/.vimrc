@@ -40,6 +40,7 @@ set background=dark
 colorscheme molokai
 syntax on
 
+NeoBundle 'itchyny/lightline.vim'
 set laststatus=2
 
 NeoBundle 'Shougo/neocomplcache'
