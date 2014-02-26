@@ -40,9 +40,8 @@ set background=dark
 colorscheme molokai
 syntax on
 
-NeoBundle 'Lokaltog/powerline', {'rtp' : 'powerline/bindings/vim'}
-set laststatus=2 "need to show
-let g:Powerline_symbols = 'fancy'
+NeoBundle 'itchyny/lightline.vim'
+set laststatus=2
 
 NeoBundle 'Shougo/neocomplcache'
 let g:neocomplcache_enable_at_startup = 1
