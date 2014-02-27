@@ -91,9 +91,6 @@ set fileencodings=ucs-bom,utf-8,iso-2022-jp,euc-jp,sjis,cp932,latin1
 set number " show number
 set ruler  " show ruler
 
-" always display tabs
-set showtabline=2
-
 " tab & indent
 " expandtab: instert spaces for tab
 " tabstop(ts): width of tab
