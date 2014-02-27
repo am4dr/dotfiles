@@ -124,9 +124,3 @@ nnoremap <Down> j
 command Vs VimShell
 command Vsp VimShellPop
 
-" gtags
-nnoremap <C-n> :cn<CR>
-nnoremap <C-p> :cp<CR>
-nnoremap <C-g> :Gtags 
-nnoremap <C-h> :Gtags -f %<CR>
-nnoremap <C-k> :GtagsCursor<CR>
