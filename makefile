@@ -8,12 +8,9 @@ TARGET_DIR = vimfiles .emacs.d
 link: _git _vim _emacs _conky _xmodmap _tmux
 
 # initialize
-#   setup the submodules and update-script
-#   run after `git clone /path/to/dotfiles.git`
-init: 
-	git submodule init
-	git submodule update
-	@echo 'please build the submodules!'
+init:
+	mkdir -p vim/bundle
+	git clone https://github.com/Shougo/neobundle.vim vim/bundle/neobundle.vim
 
 clean:
 	cd $(HOME)

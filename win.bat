@@ -18,10 +18,8 @@ echo win [init link clean]
 exit /b
 
 :init
-echo update submodules 
-git submodule init
-git submodule update
-echo updated. please build the submodules.
+mkdir vim\bundle
+git clone https://github.com/Shougo/neobundle.vim vim/bundle/neobundle.vim
 exit /b
 
 :link
