@@ -1,5 +1,5 @@
 [user]
-	name = tf_octo
+	name = amadarain
 	email = t.f.octo@gmail.com
 [core]
 	editor = vim -c \"set fenc=utf-8\"
