@@ -42,6 +42,9 @@ syntax on
 
 NeoBundle 'itchyny/lightline.vim'
 set laststatus=2
+let g:lightline = {
+\   'colorscheme': 'jellybeans',
+\}
 
 NeoBundle 'Shougo/neocomplcache'
 let g:neocomplcache_enable_at_startup = 1
