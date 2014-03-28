@@ -58,6 +58,12 @@ let g:quickrun_config = {
 \       "runner" : "vimproc",
 \       "runner/vimproc/updatetime" : 500
 \   },
+\   "markdown" : { "type" : "markdown/previm"},
+\   "markdown/previm" : {
+\       "exec" : ":PrevimOpen",
+\       "runner" : "vimscript",
+\       "outputter" : "null",
+\   },
 \}
 
 NeoBundle 'glidenote/memolist.vim'
@@ -70,6 +76,9 @@ NeoBundle 'vim-scripts/autodate.vim'
 let g:autodate_format = '%Y-%m-%d %H:%M:%S'
 
 NeoBundle 'fuenor/qfixgrep'
+
+NeoBundle 'kannokanno/previm'
+NeoBundle 'tyru/open-browser.vim'
 
 NeoBundle 'vim-jp/vimdoc-ja'
 
