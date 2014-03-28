@@ -51,18 +51,18 @@ let g:neocomplcache_enable_at_startup = 1
 
 NeoBundle 'thinca/vim-quickrun'
 let g:quickrun_config = {
-\   "_" : {
-\       "outputter/buffer/split" : ":botright 10sp",
-\       "outputter/buffer/close_on_empty" : 1,
-\       "hook/time/enable" : 1,
-\       "runner" : "vimproc",
-\       "runner/vimproc/updatetime" : 500
+\   '_' : {
+\       'outputter/buffer/split' : ':botright 10sp',
+\       'outputter/buffer/close_on_empty' : 1,
+\       'hook/time/enable' : 1,
+\       'runner' : 'vimproc',
+\       'runner/vimproc/updatetime' : 500
 \   },
-\   "markdown" : { "type" : "markdown/previm"},
-\   "markdown/previm" : {
-\       "exec" : ":PrevimOpen",
-\       "runner" : "vimscript",
-\       "outputter" : "null",
+\   'markdown' : { 'type' : 'markdown/previm'},
+\   'markdown/previm' : {
+\       'exec' : ':PrevimOpen',
+\       'runner' : 'vimscript',
+\       'outputter' : 'null',
 \   },
 \}
 
