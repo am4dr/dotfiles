@@ -77,6 +77,7 @@ let g:autodate_format = '%Y-%m-%d %H:%M:%S'
 
 NeoBundle 'fuenor/qfixgrep'
 
+NeoBundle 'osyo-manga/vim-over'
 NeoBundle 'kannokanno/previm'
 NeoBundle 'tyru/open-browser.vim'
 
