@@ -13,6 +13,7 @@ NeoBundleFetch 'Shougo/neobundle.vim'
 NeoBundle 'Shougo/unite.vim'
 let g:unite_enable_start_insert = 1
 NeoBundle 'Shougo/unite-session'
+NeoBundle 'Shougo/neomru.vim'
 
 NeoBundle 'Shougo/vimfiler.vim'
 let g:vimfiler_as_default_explorer = 1
