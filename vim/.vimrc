@@ -47,8 +47,14 @@ let g:lightline = {
 \   'colorscheme': 'jellybeans',
 \}
 
-NeoBundle 'Shougo/neocomplcache'
-let g:neocomplcache_enable_at_startup = 1
+if has('lua')
+    NeoBundle 'Shougo/neocomplete.vim'
+    let g:neocomplete#enable_at_startup = 1
+    let g:neocomplete#enable_smart_case = 1
+else
+    NeoBundle 'Shougo/neocomplcache'
+    let g:neocomplcache_enable_at_startup = 1
+endif
 
 NeoBundle 'thinca/vim-quickrun'
 let g:quickrun_config = {
