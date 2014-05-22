@@ -6,8 +6,6 @@ if has('vim_starting')
 endif
 call neobundle#rc(expand('~/vimfiles/bundle/'))
 
-filetype plugin indent on
-
 NeoBundleFetch 'Shougo/neobundle.vim'
 
 NeoBundle 'Shougo/unite.vim'
@@ -91,6 +89,8 @@ NeoBundle 'tyru/open-browser.vim'
 NeoBundle 'vim-jp/vimdoc-ja'
 
 NeoBundleCheck
+
+filetype plugin indent on
 
 set hlsearch
 
