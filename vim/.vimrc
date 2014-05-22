@@ -26,7 +26,7 @@ NeoBundle 'tpope/vim-surround'
 NeoBundle 'tpope/vim-fugitive'
 NeoBundle 'koron/codic-vim'
 " syntax
-NeoBundle 'beyondmarc/glsl.vim'
+NeoBundle 'tikhomirov/vim-glsl'
 " color
 NeoBundle 'thinca/vim-guicolorscheme'
 NeoBundle 'ujihisa/unite-colorscheme'
