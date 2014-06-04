@@ -1,6 +1,7 @@
-if filereadable('~/.gvimrc_local')
+if filereadable(expand('~/.gvimrc_local'))
     source ~/.gvimrc_local
 endif
+
 colorschem molokai
 set guioptions-=m   " メニュー非表示
 set guioptions-=T   " ツールバー非表示
