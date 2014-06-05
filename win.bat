@@ -1,7 +1,7 @@
 @echo off
 
 set DF_DIR=%HOME%\dotfiles
-set LINK_FILES=.gitconfig .global_ignore .vimrc .gvimrc .conkyrc .Xmodmap .tmux.conf
+set LINK_FILES=.gitconfig .global_ignore .vimrc .gvimrc .conkyrc .Xmodmap .tmux.conf .vimshrc
 set LINK_DIRS=vimfiles .emacs.d
 set LINK_TARGET=git vim emacs
 
@@ -53,6 +53,7 @@ exit /b
 :vim
 mklink %HOME%\.vimrc %DF_DIR%\vim\.vimrc
 mklink %HOME%\.gvimrc %DF_DIR%\vim\.gvimrc
+mklink %HOME%\.vimshrc %DF_DIR%\vim\.vimshrc
 mklink /D %HOME%\vimfiles %DF_DIR%\vim
 exit /b
 

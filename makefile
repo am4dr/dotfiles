@@ -1,6 +1,6 @@
 
 DF_DIR = $(HOME)/dotfiles
-TARGET = .gitconfig .global_ignore .vimrc .gvimrc .conkyrc .Xmodmap .tmux.conf
+TARGET = .gitconfig .global_ignore .vimrc .gvimrc .conkyrc .Xmodmap .tmux.conf .vimshrc
 TARGET_DIR = vimfiles .emacs.d
 
 # link
@@ -25,6 +25,7 @@ _git:
 _vim:
 	ln -vs $(DF_DIR)/vim/.vimrc $(HOME)/.vimrc
 	ln -vs $(DF_DIR)/vim/.gvimrc $(HOME)/.gvimrc
+	ln -vs $(DF_DIR)/vim/.vimshrc $(HOME)/.vimshrc
 	ln -vs $(DF_DIR)/vimfiles $(HOME)/.vim
 
 _emacs:
