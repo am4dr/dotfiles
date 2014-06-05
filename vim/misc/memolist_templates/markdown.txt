@@ -1,7 +1,3 @@
-title: {{_title_}}
-==========
-date: {{_date_}}
-tags: [{{_tags_}}]
-categories: [{{_categories_}}]
-Last Change:.
-- - -
+{{_title_}}
+===========
+
