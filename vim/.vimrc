@@ -1,3 +1,4 @@
+scriptencoding utf-8
 " neobundle.vim
 
 if has('vim_starting')
