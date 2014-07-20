@@ -1,7 +1,7 @@
 
 DF_DIR = $(HOME)/dotfiles
 TARGET = .gitconfig .global_ignore .vimrc .gvimrc .conkyrc .Xmodmap .tmux.conf .vimshrc
-TARGET_DIR = vimfiles .emacs.d
+TARGET_DIR = vimfiles .emacs.d .vim
 
 # link
 #   make links or copies for each dotfiles
@@ -15,7 +15,7 @@ init:
 clean:
 	cd $(HOME)
 	rm -f $(TARGET)
-	rmdir $(TARGET_DIR)
+	rm -f $(TARGET_DIR)
 
 # update setting files
 _git:
@@ -26,7 +26,8 @@ _vim:
 	ln -vs $(DF_DIR)/vim/.vimrc $(HOME)/.vimrc
 	ln -vs $(DF_DIR)/vim/.gvimrc $(HOME)/.gvimrc
 	ln -vs $(DF_DIR)/vim/.vimshrc $(HOME)/.vimshrc
-	ln -vs $(DF_DIR)/vimfiles $(HOME)/.vim
+	ln -vs $(DF_DIR)/vim $(HOME)/.vim
+	ln -vs $(DF_DIR)/vim $(HOME)/vimfiles
 
 _emacs:
 	ln -vs $(DF_DIR)/emacs.d $(HOME)/.emacs.d
