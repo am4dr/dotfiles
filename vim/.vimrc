@@ -125,12 +125,15 @@ set softtabstop=4
 set shiftwidth=4
 set smartindent
 
-" Entering insert mode or search mode, disable the IME
-set iminsert=0 imsearch=0
-" don't register IME state for insert-mode
+""""
+" escape into normal mode
+""""
+imap <silent> <C-J> <Esc>
+" turn off the IM
+set iminsert=0
+" use the iminsert value for imsearch
+set imsearch=-1
 inoremap <silent> <Esc> <Esc>:set iminsert=0<CR>
-
-inoremap <C-J> <Esc>
 
 set backupdir=~/vimfiles/tmp
 
