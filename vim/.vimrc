@@ -130,6 +130,8 @@ set iminsert=0 imsearch=0
 " don't register IME state for insert-mode
 inoremap <silent> <Esc> <Esc>:set iminsert=0<CR>
 
+inoremap <C-J> <Esc>
+
 set backupdir=~/vimfiles/tmp
 
 " to move cursor between the split screen
@@ -141,4 +143,28 @@ nnoremap <Down> j
 " VimShell
 command Vs VimShell
 command Vsp VimShellPop
+
+" shortcuts
+nnoremap [shortcut] <Nop>
+nmap <Space> [shortcut]
+
+nmap [shortcut]m [memolist]
+nnoremap [memolist] <Nop>
+nnoremap [memolist]l :<C-u>MemoList<CR>
+nnoremap [memolist]g :<C-u>MemoGrep 
+nnoremap [memolist]n :<C-u>MemoNew 
+
+nmap [shortcut]u [unite]
+nnoremap [unite] :<C-u>Unite 
+nnoremap [unite]f :<C-u>Unite file<CR>
+nnoremap [unite]m :<C-u>Unite file_mru<CR>
+
+nmap [shortcut]v [vimshell]
+nnoremap [vimshell] :<C-u>VimShell
+nnoremap [vimshell]s :<C-u>VimShell<CR>
+nnoremap [vimshell]p :<C-u>VimShellPop<CR>
+nnoremap [vimshell]b :<C-u>VimShellBufferDir<CR>
+
+nmap [shortcut]o [overvim]
+nnoremap [overvim] :<C-u>OverCommandLine<CR>
 
