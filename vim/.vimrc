@@ -143,10 +143,6 @@ nnoremap <Right> l
 nnoremap <Up> k
 nnoremap <Down> j
 
-" VimShell
-command Vs VimShell
-command Vsp VimShellPop
-
 " shortcuts
 nnoremap [shortcut] <Nop>
 nmap <Space> [shortcut]
