@@ -18,7 +18,11 @@ NeoBundle 'Shougo/vimfiler.vim'
 let g:vimfiler_as_default_explorer = 1
 let g:vimfiler_time_format = "%m%d %H%M"
 
-NeoBundle 'Shougo/vimproc'
+NeoBundle 'Shougo/vimproc' , {
+\   'build' : {
+\       'unix' : 'make -f make_unix.mak',
+\   },
+\}
 NeoBundle 'Shougo/vimshell'
 NeoBundle 'Shougo/vinarise.vim'
 NeoBundle 'tpope/vim-surround'
