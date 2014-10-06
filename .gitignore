@@ -6,7 +6,7 @@
 Session.vim
 .netrwhist
 
-## bundle ##[D[D[D[D[D[D[D[D[Dvim[2~ bundle ##
+## vim pulugins
 vim/bundle/*
 
 ## dotfiles working directory
