@@ -1,5 +1,6 @@
 ## vim ###############################################
-.*.s[a-w][a-z]
+[._]*.s[a-w][a-z]
+[._]s[a-w][a-z]
 *.un~
 Session.vim
 .netrwhist
@@ -7,17 +8,15 @@ Session.vim
 
 ## Eclipse ###########################################
 *.pydevproject
-.project
 .metadata
-bin/**
-tmp/**
-tmp/**/*
+.gradle
+bin/
+tmp/
 *.tmp
 *.bak
 *.swp
 *~.nib
 local.properties
-.classpath
 .settings/
 .loadpath
 
@@ -43,4 +42,19 @@ Desktop.ini
 
 # Recycle Bin used on file shares
 $RECYCLE.BIN/
+
+## Tags ##############################################
+# Ignore tags created by etags, ctags, gtags (GNU global) and cscope
+TAGS
+!TAGS/
+tags
+!tags/
+gtags.files
+GTAGS
+GRTAGS
+GPATH
+cscope.files
+cscope.out
+cscope.in.out
+cscope.po.out
 
