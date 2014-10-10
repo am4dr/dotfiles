@@ -90,6 +90,7 @@ NeoBundle 'fuenor/qfixgrep'
 
 NeoBundle 'osyo-manga/vim-over'
 NeoBundle 'kannokanno/previm'
+let g:previm_enable_realtime = 1
 NeoBundle 'tyru/open-browser.vim'
 NeoBundle 'gist:amadarain/35ba8308674c6a0a7526', {
 \   'name' : 'gtags.vim',
