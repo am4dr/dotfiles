@@ -126,6 +126,7 @@ set hlsearch
 set cursorline
 set scrolloff=1
 set laststatus=2
+set cmdheight=2
 
 " editting """"""""""""""""""""""""""""""""""""""""""""""""
 " backspace deletes fixed letters
