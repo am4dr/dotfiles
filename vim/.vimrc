@@ -149,9 +149,10 @@ set smartindent
 " shortcut commands                                        "
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-" escape into normal mode
-imap <silent> <C-J> <Esc>
-" on Insert and Normal mode, <Esc> disables IM
+" map  : Normal, Visual, Select, Operator-pending
+" lmap : Insert, Command-line
+map <silent> <C-j> <Esc>
+lmap <silent> <C-j> <Esc>
 nnoremap <silent> <Esc> <Esc>:set iminsert=0<CR>
 inoremap <silent> <Esc> <Esc>:set iminsert=0<CR>
 
