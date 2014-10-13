@@ -1,4 +1,7 @@
 scriptencoding utf-8
+set nocompatible
+filetype off
+filetype plugin indent off
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Plugins                                                 "
@@ -6,7 +9,6 @@ scriptencoding utf-8
 
 " load neobundle """"""""""""""""""""""""""""""""""""""""""
 if has('vim_starting')
-    set nocompatible
 	set runtimepath+=~/vimfiles/bundle/neobundle.vim/
 endif
 call neobundle#rc(expand('~/vimfiles/bundle/'))
@@ -94,35 +96,40 @@ NeoBundleCheck
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Vim Settings
+" Vim Settings                                            "
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-set t_Co=256
-set background=dark
-colorscheme molokai
-syntax on
 
-set laststatus=2
+" Vim internal """"""""""""""""""""""""""""""""""""""""""""
 filetype plugin indent on
-
-set hlsearch
-
-set cursorline
-
-set scrolloff=1
-
-" backspace deletes fixed letters
-set backspace=start,indent
-
 " encoding settings
 " fileencodings: for auto-detection
 " encoding: internal file encoding
 " fileencoding: file encoding
 set encoding=utf-8
 set fileencodings=ucs-bom,utf-8,iso-2022-jp,euc-jp,sjis,cp932,latin1
+set backupdir=~/vimfiles/tmp
+" turn off the IM
+set iminsert=0
+" use the iminsert value for imsearch
+set imsearch=-1
 
-set number " show number
-set ruler  " show ruler
+" appearance """"""""""""""""""""""""""""""""""""""""""""""
+" color
+set t_Co=256
+set background=dark
+colorscheme molokai
+syntax on " calls ':filetype on' internally
 
+set ruler
+set number
+set hlsearch
+set cursorline
+set scrolloff=1
+set laststatus=2
+
+" editting """"""""""""""""""""""""""""""""""""""""""""""""
+" backspace deletes fixed letters
+set backspace=start,indent
 " tab & indent
 " expandtab: instert spaces for tab
 " tabstop(ts): width of tab
@@ -136,25 +143,20 @@ set softtabstop=4
 set shiftwidth=4
 set smartindent
 
-""""
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" shortcut commands                                        "
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
 " escape into normal mode
-""""
 imap <silent> <C-J> <Esc>
-" turn off the IM
-set iminsert=0
-" use the iminsert value for imsearch
-set imsearch=-1
 inoremap <silent> <Esc> <Esc>:set iminsert=0<CR>
 
-set backupdir=~/vimfiles/tmp
-
-" to move cursor between the split screen
 nnoremap <Left> h
 nnoremap <Right> l
 nnoremap <Up> k
 nnoremap <Down> j
 
-" shortcuts
 nnoremap [shortcut] <Nop>
 nmap <Space> [shortcut]
 
