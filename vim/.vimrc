@@ -151,6 +151,8 @@ set smartindent
 
 " escape into normal mode
 imap <silent> <C-J> <Esc>
+" on Insert and Normal mode, <Esc> disables IM
+nnoremap <silent> <Esc> <Esc>:set iminsert=0<CR>
 inoremap <silent> <Esc> <Esc>:set iminsert=0<CR>
 
 nnoremap <Left> h
