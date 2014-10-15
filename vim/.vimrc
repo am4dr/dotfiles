@@ -11,7 +11,7 @@ filetype plugin indent off
 if has('vim_starting')
 	set runtimepath+=~/vimfiles/bundle/neobundle.vim/
 endif
-call neobundle#rc(expand('~/vimfiles/bundle/'))
+call neobundle#begin(expand('~/vimfiles/bundle/'))
 NeoBundleFetch 'Shougo/neobundle.vim'
 
 " syntax  """""""""""""""""""""""""""""""""""""""""""""""""
@@ -92,6 +92,9 @@ NeoBundle 'gist:amadarain/35ba8308674c6a0a7526', {
 \   'script_type' : 'plugin'
 \}
 NeoBundle 'vim-jp/vimdoc-ja'
+call neobundle#end()
+" required by neobundle
+filetype plugin indent on
 NeoBundleCheck
 
 
@@ -100,7 +103,6 @@ NeoBundleCheck
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 " Vim internal """"""""""""""""""""""""""""""""""""""""""""
-filetype plugin indent on
 " encoding settings
 " fileencodings: for auto-detection
 " encoding: internal file encoding
