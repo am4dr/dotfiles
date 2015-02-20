@@ -57,6 +57,7 @@ let g:lightline = {
 \      'V' : 'VL',
 \      "\<C-v>" : 'VB',
 \   },
+\   'subseparator' : { 'left' : '', 'right' : '' },
 \}
 if has('lua')
     NeoBundle 'Shougo/neocomplete.vim'
