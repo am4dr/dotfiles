@@ -49,6 +49,14 @@ NeoBundle 'koron/codic-vim'
 NeoBundle 'itchyny/lightline.vim'
 let g:lightline = {
 \   'colorscheme': 'jellybeans',
+\   'mode_map': {
+\      'n' : 'N',
+\      'i' : 'I',
+\      'R' : 'R',
+\      'v' : 'V',
+\      'V' : 'VL',
+\      "\<C-v>" : 'VB',
+\   },
 \}
 if has('lua')
     NeoBundle 'Shougo/neocomplete.vim'
