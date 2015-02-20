@@ -48,8 +48,44 @@ NeoBundle 'tpope/vim-fugitive'
 NeoBundle 'koron/codic-vim'
 NeoBundle 'itchyny/lightline.vim'
 let g:lightline = {
+\   'active' : {
+\       'left'  : [ ['mode', 'paste'],
+\                   ['readonly', 'filename', 'modified'] ],
+\       'right' : [ ['percent', 'lineinfo'],
+\                   ['filetype'],
+\                   ['fileformat', 'fileencoding'] ],
+\   },
+\   'inactive' : {
+\       'left'  : [ ['filename'] ],
+\       'right' : [ ['percent', 'lineinfo'] ]
+\   },
+\   'component_function' : {
+\       'fileformat' : 'LLFileFormat',
+\       'fileencoding': 'LLFileEncoding',
+\   },
 \   'colorscheme': 'jellybeans',
+\   'mode_map': {
+\      'n' : 'N',
+\      'i' : 'I',
+\      'R' : 'R',
+\      'v' : 'V',
+\      'V' : 'VL',
+\      "\<C-v>" : 'VB',
+\   },
+\   'subseparator' : { 'left' : '', 'right' : '' },
 \}
+function! LLFileFormat()
+    let ff = &fileformat
+    return ff == 'unix' ? 'NL' :
+        \  ff == 'dos'  ? 'CN' :
+        \  ff == 'mac'  ? 'CR' :
+        \  ff
+endfunction
+function! LLFileEncoding()
+    let fe = &fileencoding
+    return fe == 'utf-8' ? 'u8' : fe
+endfunction
+
 if has('lua')
     NeoBundle 'Shougo/neocomplete.vim'
     let g:neocomplete#enable_at_startup = 1
