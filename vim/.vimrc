@@ -51,9 +51,13 @@ let g:lightline = {
 \   'active' : {
 \       'left'  : [ ['mode', 'paste'],
 \                   ['readonly', 'filename', 'modified'] ],
-\       'right' : [ ['lineinfo'],
-\                   ['percent'],
-\                   ['fileformat', 'fileencoding', 'filetype'] ],
+\       'right' : [ ['percent', 'lineinfo'],
+\                   ['filetype'],
+\                   ['fileformat', 'fileencoding'] ],
+\   },
+\   'inactive' : {
+\       'left'  : [ ['filename'] ],
+\       'right' : [ ['percent', 'lineinfo'] ]
 \   },
 \   'component_function' : {
 \       'fileformat' : 'LLFileFormat',
