@@ -211,7 +211,7 @@ nnoremap [memolist]n :<C-u>MemoNew
 
 nmap [shortcut]u [unite]
 nnoremap [unite] :<C-u>Unite 
-nnoremap [unite]f :<C-u>Unite file<CR>
+nnoremap [unite]f :<C-u>Unite file_rec<CR>
 nnoremap [unite]m :<C-u>Unite file_mru<CR>
 
 nmap [shortcut]v [vimshell]
