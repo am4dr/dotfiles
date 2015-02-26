@@ -158,6 +158,8 @@ set imsearch=-1
 set t_Co=256
 set background=dark
 colorscheme molokai
+" syntax highlighting
+let java_highlight_java_lang_ids=1
 syntax on " calls ':filetype on' internally
 
 set ruler
