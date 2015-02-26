@@ -2,7 +2,7 @@ if filereadable(expand('~/.gvimrc_local'))
     source ~/.gvimrc_local
 endif
 
-colorscheme molokai
+colorscheme jellybeans
 set guioptions-=m   " メニュー非表示
 set guioptions-=T   " ツールバー非表示
 set guioptions-=l   " スクロールバーの非表示(常に左)
