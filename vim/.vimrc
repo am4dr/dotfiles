@@ -216,6 +216,7 @@ nmap [shortcut]u [unite]
 nnoremap [unite] :<C-u>Unite 
 nnoremap [unite]f :<C-u>Unite file_rec<CR>
 nnoremap [unite]m :<C-u>Unite file_mru<CR>
+nnoremap [unite]s :<C-u>Unite session<CR>
 
 nmap [shortcut]v [vimshell]
 nnoremap [vimshell] :<C-u>VimShell
