@@ -90,7 +90,7 @@ if has('lua')
     NeoBundle 'Shougo/neocomplete.vim'
     let g:neocomplete#enable_at_startup = 1
     let g:neocomplete#enable_smart_case = 1
-    let g:neocomplete#auto_completion_start_length = 3
+    let g:neocomplete#auto_completion_start_length = 7
 else
     NeoBundle 'Shougo/neocomplcache'
     let g:neocomplcache_enable_at_startup = 1
