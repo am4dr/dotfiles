@@ -22,6 +22,10 @@ let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_loc_list_height = 5
 let g:syntastic_mode_map = { 'mode': 'passive' }
 let g:syntastic_java_javac_options = '-J-Dfile.encoding=utf-8'
+NeoBundle 'gist:amadarain/4e6fc1bade7c1add02e5', {
+\   'name' : 'syntastic_groovyc.vim',
+\   'script_type' : 'plugin'
+\}
 " colorscheme """""""""""""""""""""""""""""""""""""""""""""
 NeoBundle 'altercation/vim-colors-solarized'
 NeoBundle 'nanotech/jellybeans.vim'
