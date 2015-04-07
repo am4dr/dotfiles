@@ -116,6 +116,17 @@ let g:quickrun_config = {
 \       'runner' : 'vimscript',
 \       'outputter' : 'null',
 \   },
+\   'groovy' : {
+\       'type' : executable('groovyclient') ? 'groovy/groovyserv' :
+\                'groovy/groovy',
+\   },
+\   'groovy/groovyserv' : {
+\       'command' : 'groovyclient',
+\   },
+\   'groovy/groovy' : {
+\       'command' : 'groovy',
+\       'cmdopt' : '-c %{&fenc==#""?&enc:&fenc}',
+\   },
 \}
 NeoBundle 'glidenote/memolist.vim'
 let g:memolist_path = '~/Dropbox/works/Memo'
