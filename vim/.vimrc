@@ -16,7 +16,12 @@ NeoBundleFetch 'Shougo/neobundle.vim'
 
 " syntax  """""""""""""""""""""""""""""""""""""""""""""""""
 NeoBundle 'tikhomirov/vim-glsl'
-
+NeoBundle 'scrooloose/syntastic'
+let g:syntastic_check_on_wq = 0
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_loc_list_height = 5
+let g:syntastic_mode_map = { 'mode': 'passive' }
+let g:syntastic_java_javac_options = '-J-Dfile.encoding=utf-8'
 " colorscheme """""""""""""""""""""""""""""""""""""""""""""
 NeoBundle 'altercation/vim-colors-solarized'
 NeoBundle 'nanotech/jellybeans.vim'
@@ -229,4 +234,8 @@ nnoremap [vimshell]b :<C-u>VimShellBufferDir<CR>
 
 nmap [shortcut]o [overvim]
 nnoremap [overvim] :<C-u>OverCommandLine<CR>
+
+nmap [shortcut]s [syntastic]
+nnoremap [syntastic]c :<C-u>SyntasticCheck<CR>
+nnoremap [syntastic]t :<C-u>SyntasticToggleMode<CR>
 
