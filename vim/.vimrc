@@ -155,6 +155,7 @@ NeoBundle 'gist:amadarain/35ba8308674c6a0a7526', {
 \   'script_type' : 'plugin'
 \}
 NeoBundle 'rhysd/wandbox-vim'
+NeoBundle 'Shougo/junkfile.vim'
 NeoBundle 'vim-jp/vimdoc-ja'
 call neobundle#end()
 " required by neobundle
