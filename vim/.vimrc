@@ -201,17 +201,10 @@ set cmdheight=2
 " editting """"""""""""""""""""""""""""""""""""""""""""""""
 " backspace deletes fixed letters
 set backspace=start,indent
-" tab & indent
-" expandtab: instert spaces for tab
-" tabstop(ts): width of tab
-" softtabstop(sts): inserted number of spaces for tab
-" shiftwidth(sw): inserted number of spaces as autoindent 
-" autoindent: considering only before line
-" smartindent: considering some C syntax
-set expandtab
-set tabstop=4
-set softtabstop=4
-set shiftwidth=4
+set expandtab       " insert spaces instead of tab
+set tabstop=4       " width of tab
+set softtabstop=4   " width of expaned tab
+set shiftwidth=4    " width of autoindent
 set smartindent
 inoremap <silent> <C-@> <Nop>
 
