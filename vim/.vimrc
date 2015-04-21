@@ -197,6 +197,7 @@ set cursorline
 set scrolloff=1
 set laststatus=2
 set cmdheight=2
+set display+=lastline
 
 " editting """"""""""""""""""""""""""""""""""""""""""""""""
 " backspace deletes fixed letters
