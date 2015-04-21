@@ -207,7 +207,7 @@ set softtabstop=4   " width of expaned tab
 set shiftwidth=4    " width of autoindent
 set smartindent
 inoremap <silent> <C-@> <Nop>
-set formatoptions+=M
+set formatoptions+=mM
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " shortcut commands                                        "
