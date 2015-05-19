@@ -209,6 +209,7 @@ set shiftwidth=4    " width of autoindent
 set smartindent
 inoremap <silent> <C-@> <Nop>
 set formatoptions+=mM
+nnoremap <silent> <C-l> :<C-u>nohlsearch<CR><C-l>
 
 "  """""""""""""""""""""""""""""""""""""""""""""""""""""""""
 set incsearch
