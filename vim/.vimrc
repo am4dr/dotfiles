@@ -139,7 +139,7 @@ let g:quickrun_config = {
 \   },
 \}
 NeoBundle 'glidenote/memolist.vim'
-let g:memolist_path = '~/Dropbox/works/Memo'
+let g:memolist_path = '~/works/memo'
 let g:memolist_memo_date = '%Y-%m-%d %H:%M:%S'
 let g:memolist_template_dir_path = '~/vimfiles/misc/memolist_templates'
 let g:memolist_qfixgrep = 1
