@@ -9,7 +9,7 @@ filetype plugin indent off
 
 " load neobundle """"""""""""""""""""""""""""""""""""""""""
 if has('vim_starting')
-	set runtimepath+=~/vimfiles/bundle/neobundle.vim/
+    set runtimepath+=~/vimfiles/bundle/neobundle.vim/
 endif
 call neobundle#begin(expand('~/vimfiles/bundle/'))
 NeoBundleFetch 'Shougo/neobundle.vim'
