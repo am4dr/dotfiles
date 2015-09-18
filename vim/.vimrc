@@ -33,7 +33,6 @@ NeoBundle 'tomasr/molokai'
 NeoBundle 'vim-scripts/Wombat'
 
 " colorscheme utility """""""""""""""""""""""""""""""""""""
-NeoBundle 'thinca/vim-guicolorscheme'
 NeoBundle 'ujihisa/unite-colorscheme'
 NeoBundle 'vim-scripts/AfterColors.vim'
 
