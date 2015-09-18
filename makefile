@@ -1,6 +1,6 @@
 
 DF_DIR = $(HOME)/dotfiles
-TARGET = .gitconfig .global_ignore .vimrc .gvimrc .conkyrc .Xmodmap .tmux.conf .vimshrc
+TARGET = .gitconfig .global_ignore .vimrc .gvimrc .conkyrc .Xmodmap .tmux.conf .vimshrc .config/git/attributes
 TARGET_DIR = vimfiles .emacs.d .vim
 
 # link
@@ -13,14 +13,17 @@ init:
 	git clone https://github.com/Shougo/neobundle.vim vim/bundle/neobundle.vim
 
 clean:
-	cd $(HOME)
+	pushd $(HOME)
 	rm -f $(TARGET)
 	rm -f $(TARGET_DIR)
+	popd
 
 # update setting files
 _git:
 	ln -vs $(DF_DIR)/git/gitconfig $(HOME)/.gitconfig
 	ln -vs $(DF_DIR)/git/global_ignore $(HOME)/.global_ignore
+	mkdir -p $(HOME)/.config/git
+	ln -vs $(DF_DIR)/git/attributes $(HOME)/.config/git/attributes
 
 _vim:
 	ln -vs $(DF_DIR)/vim/.vimrc $(HOME)/.vimrc
