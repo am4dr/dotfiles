@@ -183,9 +183,13 @@ set imsearch=-1
 
 " appearance """"""""""""""""""""""""""""""""""""""""""""""
 " color
-set t_Co=256
 set background=dark
-colorscheme jellybeans
+if has('win32')
+    colorscheme default
+else
+    set t_Co=256
+    colorscheme jellybeans
+endif
 " syntax highlighting
 let java_highlight_java_lang_ids=1
 syntax on " calls ':filetype on' internally
