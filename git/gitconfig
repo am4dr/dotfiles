@@ -4,7 +4,8 @@
 [core]
 	editor = vim -c \"set fenc=utf-8\"
 	excludesfile = ~/.global_ignore
-	autocrlf = input
+	autocrlf = false
+	eol = lf
 [color]
 	ui = true
 [push]
