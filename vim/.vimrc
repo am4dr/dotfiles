@@ -194,10 +194,14 @@ endif
 let java_highlight_java_lang_ids=1
 syntax on " calls ':filetype on' internally
 
+if has('win32') && !has('gui_running')
+    set nocursorline
+else
+    set cursorline
+endif
 set ruler
 set number
 set hlsearch
-set cursorline
 set scrolloff=1
 set laststatus=2
 set cmdheight=2
