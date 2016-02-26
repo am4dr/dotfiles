@@ -229,8 +229,6 @@ set incsearch
 " escape into normal mode
 nmap <silent> <C-j> <Esc>
 imap <silent> <C-j> <Esc>
-" on Insert and Normal mode, <Esc> disables IM
-inoremap <silent> <Esc> <Esc>:set iminsert=0<CR>
 
 nnoremap <Left> h
 nnoremap <Right> l
