@@ -16,13 +16,13 @@ NeoBundleFetch 'Shougo/neobundle.vim'
 
 " syntax  """""""""""""""""""""""""""""""""""""""""""""""""
 NeoBundle 'tikhomirov/vim-glsl'
-NeoBundle 'scrooloose/syntastic'
+NeoBundleLazy 'scrooloose/syntastic'
 let g:syntastic_check_on_wq = 0
 let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_loc_list_height = 5
 let g:syntastic_mode_map = { 'mode': 'passive' }
 let g:syntastic_java_javac_options = '-J-Dfile.encoding=utf-8'
-NeoBundle 'gist:amadarain/4e6fc1bade7c1add02e5', {
+NeoBundleLazy 'gist:amadarain/4e6fc1bade7c1add02e5', {
 \   'name' : 'syntastic_groovy_groovyc.vim',
 \   'script_type' : 'plugin'
 \}
