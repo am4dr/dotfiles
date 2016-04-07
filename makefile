@@ -9,8 +9,7 @@ link: _git _vim _emacs _conky _xmodmap _tmux
 
 # initialize
 init:
-	mkdir -p vim/bundle
-	git clone https://github.com/Shougo/neobundle.vim vim/bundle/neobundle.vim
+	git clone https://github.com/Shougo/dein.vim $(DF_DIR)/vim/dein/repos/github.com/Shougo/dein.vim
 
 clean:
 	cd $(HOME)

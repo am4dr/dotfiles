@@ -18,8 +18,7 @@ echo win [init link clean]
 exit /b
 
 :init
-mkdir vim\bundle
-git clone https://github.com/Shougo/neobundle.vim vim/bundle/neobundle.vim
+git clone https://github.com/Shougo/dein.vim %DF_DIR%/vim/dein/repos/github.com/Shougo/dein.vim
 exit /b
 
 :link

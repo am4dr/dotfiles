@@ -6,55 +6,51 @@ filetype plugin indent off
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Plugins                                                 "
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-
-" load neobundle """"""""""""""""""""""""""""""""""""""""""
-if has('vim_starting')
-    set runtimepath+=~/vimfiles/bundle/neobundle.vim/
-endif
-call neobundle#begin(expand('~/vimfiles/bundle/'))
-NeoBundleFetch 'Shougo/neobundle.vim'
+set runtimepath^=~/vimfiles/dein/repos/github.com/Shougo/dein.vim
+call dein#begin(expand('~/vimfiles/dein/'))
+call dein#add('Shougo/dein.vim')
 
 " syntax  """""""""""""""""""""""""""""""""""""""""""""""""
-NeoBundle 'tikhomirov/vim-glsl'
-NeoBundleLazy 'scrooloose/syntastic'
+call dein#add('tikhomirov/vim-glsl')
+call dein#add('scrooloose/syntastic', {
+\   'lazy' : 1,
+\   'on_cmd' : ['Syntastic']
+\})
 let g:syntastic_check_on_wq = 0
 let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_loc_list_height = 5
 let g:syntastic_mode_map = { 'mode': 'passive' }
 let g:syntastic_java_javac_options = '-J-Dfile.encoding=utf-8'
-NeoBundleLazy 'gist:amadarain/4e6fc1bade7c1add02e5', {
+call dein#add('https://gist.github.com/amadarain/4e6fc1bade7c1add02e5', {
+\   'depends' : 'scrooloose/syntastic',
+\   'lazy' : 1,
 \   'name' : 'syntastic_groovy_groovyc.vim',
-\   'script_type' : 'plugin'
-\}
+\})
 " colorscheme """""""""""""""""""""""""""""""""""""""""""""
-NeoBundle 'altercation/vim-colors-solarized'
-NeoBundle 'nanotech/jellybeans.vim'
-NeoBundle 'tomasr/molokai'
-NeoBundle 'vim-scripts/Wombat'
-
+call dein#add('altercation/vim-colors-solarized')
+call dein#add('nanotech/jellybeans.vim')
+call dein#add('tomasr/molokai')
+call dein#add('vim-scripts/Wombat')
 " colorscheme utility """""""""""""""""""""""""""""""""""""
-NeoBundle 'ujihisa/unite-colorscheme'
-NeoBundle 'vim-scripts/AfterColors.vim'
+call dein#add('ujihisa/unite-colorscheme')
+call dein#add('vim-scripts/AfterColors.vim')
 
 " other plugins """""""""""""""""""""""""""""""""""""""""""
-NeoBundle 'Shougo/vimproc' , {
-\   'build' : {
-\       'unix' : 'make -f make_unix.mak',
-\   },
-\}
-NeoBundle 'Shougo/unite.vim'
+call dein#add('Shougo/vimproc')
+let g:vimproc#download_windows_dll = 1
+call dein#add('Shougo/unite.vim')
 let g:unite_enable_start_insert = 1
-NeoBundle 'Shougo/unite-session'
-NeoBundle 'Shougo/neomru.vim'
-NeoBundle 'Shougo/vimfiler.vim'
+call dein#add('Shougo/unite-session')
+call dein#add('Shougo/neomru.vim')
+call dein#add('Shougo/vimfiler.vim')
 let g:vimfiler_as_default_explorer = 1
 let g:vimfiler_time_format = "%m%d %H%M"
-NeoBundle 'Shougo/vimshell'
-NeoBundle 'Shougo/vinarise.vim'
-NeoBundle 'tpope/vim-surround'
-NeoBundle 'tpope/vim-fugitive'
-NeoBundle 'koron/codic-vim'
-NeoBundle 'itchyny/lightline.vim'
+call dein#add('Shougo/vimshell')
+call dein#add('Shougo/vinarise.vim')
+call dein#add('tpope/vim-surround')
+call dein#add('tpope/vim-fugitive')
+call dein#add('koron/codic-vim')
+call dein#add('itchyny/lightline.vim')
 let g:lightline = {
 \   'active' : {
 \       'left'  : [ ['mode', 'paste'],
@@ -94,17 +90,14 @@ function! LLFileEncoding()
     return fe == 'utf-8' ? 'u8' : fe
 endfunction
 
+call dein#add('Shougo/neocomplete.vim', { 'if' : has('lua') })
 if has('lua')
-    NeoBundle 'Shougo/neocomplete.vim'
     let g:neocomplete#enable_at_startup = 1
     let g:neocomplete#enable_smart_case = 1
     let g:neocomplete#enable_camel_case = 1
     let g:neocomplete#auto_completion_start_length = 7
-else
-    NeoBundle 'Shougo/neocomplcache'
-    let g:neocomplcache_enable_at_startup = 1
 endif
-NeoBundle 'thinca/vim-quickrun'
+call dein#add('thinca/vim-quickrun')
 let g:quickrun_config = {
 \   '_' : {
 \       'outputter/buffer/split' : ':botright 10sp',
@@ -137,31 +130,33 @@ let g:quickrun_config = {
 \       'outputter' : 'null',
 \   },
 \}
-NeoBundle 'glidenote/memolist.vim'
+call dein#add('glidenote/memolist.vim')
 let g:memolist_path = '~/works/memo'
 let g:memolist_memo_date = '%Y-%m-%d %H:%M:%S'
 let g:memolist_template_dir_path = '~/vimfiles/misc/memolist_templates'
 let g:memolist_qfixgrep = 1
 let g:memolist_unite = 1
-NeoBundle 'vim-scripts/autodate.vim'
+call dein#add('vim-scripts/autodate.vim')
 let g:autodate_format = '%Y-%m-%d %H:%M:%S'
-NeoBundle 'fuenor/qfixgrep'
-NeoBundle 'osyo-manga/vim-over'
-NeoBundle 'kannokanno/previm'
+call dein#add('fuenor/qfixgrep')
+call dein#add('osyo-manga/vim-over')
+call dein#add('kannokanno/previm')
 let g:previm_enable_realtime = 1
-NeoBundle 'tyru/open-browser.vim'
-NeoBundle 'gist:amadarain/35ba8308674c6a0a7526', {
+call dein#add('tyru/open-browser.vim')
+call dein#add('https://gist.github.com/amadarain/35ba8308674c6a0a7526', {
 \   'name' : 'gtags.vim',
-\   'script_type' : 'plugin'
-\}
-NeoBundle 'rhysd/wandbox-vim'
-NeoBundle 'Shougo/junkfile.vim'
-NeoBundle 'vim-jp/vimdoc-ja'
-call neobundle#end()
-" required by neobundle
-filetype plugin indent on
-NeoBundleCheck
+\})
+call dein#add('rhysd/wandbox-vim')
+call dein#add('Shougo/junkfile.vim')
+call dein#add('vim-jp/vimdoc-ja')
 
+call dein#end()
+
+if dein#check_install()
+    call dein#install()
+endif
+
+filetype plugin indent on
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Vim Settings                                            "
