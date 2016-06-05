@@ -225,6 +225,20 @@ nnoremap <silent> <C-l> :<C-u>nohlsearch<CR><C-l>
 set incsearch
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Gocha Gocha                                              "
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" this command does not handle import errors yet
+function! s:useGradleAsMakeprg()
+    set makeprg=gradle\ --daemon\ --quiet
+    let &errorformat = ''
+        \   . '%f: %l: %\%%([Static type checking] - %\)%\=%m @%.%#column %c.,'
+        \   . '%E%f: %l: %\%%([Static type checking] - %\)%\=%m,'
+        \   . '%-Z @ line %l%\, column %c.,'
+"        \   . '%-G%.%#,'
+endfunction
+command! -nargs=0 UseGradle call s:useGradleAsMakeprg()
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " shortcut commands                                        "
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
