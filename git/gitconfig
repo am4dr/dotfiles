@@ -22,3 +22,4 @@
 	wd = diff --word-diff
 [diff]
 	algorithm = histogram
+	compactionHeuristic = true
