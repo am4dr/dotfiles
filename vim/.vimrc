@@ -238,6 +238,11 @@ function! s:useGradleAsMakeprg()
 endfunction
 command! -nargs=0 UseGradle call s:useGradleAsMakeprg()
 
+function! s:args_by_extention(...) range abort
+    execute 'args **/*.' . join(a:000, ' **/*.')
+endfunction
+command! -nargs=+ -bar ArgsByExtension
+\   execute 'args **/*.' . join([<f-args>], ' **/*.')
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " shortcut commands                                        "
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""
