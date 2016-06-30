@@ -256,6 +256,8 @@ nnoremap <Right> l
 nnoremap <Up> k
 nnoremap <Down> j
 
+nnoremap <Leader>mk :silent make 
+
 nnoremap [shortcut] <Nop>
 nmap <Space> [shortcut]
 
