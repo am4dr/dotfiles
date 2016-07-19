@@ -243,6 +243,8 @@ function! s:args_by_extention(...) range abort
 endfunction
 command! -nargs=+ -bar ArgsByExtension
 \   execute 'args **/*.' . join([<f-args>], ' **/*.')
+command! TimeStamp execute 'normal "=strftime("%Y-%m-%dT%H:%M:%S")<C-M>P'
+
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " shortcut commands                                        "
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""
