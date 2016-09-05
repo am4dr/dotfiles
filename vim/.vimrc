@@ -32,7 +32,7 @@ call dein#add('ujihisa/unite-colorscheme')
 call dein#add('vim-scripts/AfterColors.vim')
 
 " other plugins """""""""""""""""""""""""""""""""""""""""""
-call dein#add('Shougo/vimproc')
+call dein#add('Shougo/vimproc', {'build': 'make'})
 call dein#add('Shougo/unite.vim')
 call dein#add('Shougo/unite-session')
 call dein#add('Shougo/neomru.vim')
