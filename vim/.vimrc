@@ -7,7 +7,7 @@ filetype plugin indent off
 " Plugins                                                 "
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 set runtimepath^=~/vimfiles/dein/repos/github.com/Shougo/dein.vim
-if dein#load_state(expand('~/vimfiles/dein/'))
+"if dein#load_state(expand('~/vimfiles/dein/'))
 call dein#begin(expand('~/vimfiles/dein/'))
 call dein#add('Shougo/dein.vim')
 
@@ -59,11 +59,11 @@ call dein#add('Shougo/junkfile.vim')
 call dein#add('vim-jp/vimdoc-ja')
 
 call dein#end()
-endif " for dein#load_state()
-call dein#save_state()
-if dein#check_install()
-    call dein#install()
-endif
+"endif " for dein#load_state()
+"call dein#save_state()
+"if dein#check_install()
+"    call dein#install()
+"endif
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Plugin config                                           "
