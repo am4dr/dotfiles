@@ -234,7 +234,10 @@ function! s:useGradleAsMakeprg()
         \   . '%f: %l: %\%%([Static type checking] - %\)%\=%m @%.%#column %c.,'
         \   . '%E%f: %l: %\%%([Static type checking] - %\)%\=%m,'
         \   . '%-Z @ line %l%\, column %c.,'
-"        \   . '%-G%.%#,'
+        \   . '%-Gstartup failed:,'
+        \   . '%+G  %.%#,'
+        \   . '%-G,'
+        \   . '%-G%.%#,'
 endfunction
 command! -nargs=0 UseGradle call s:useGradleAsMakeprg()
 
