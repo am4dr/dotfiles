@@ -247,6 +247,10 @@ endfunction
 command! -nargs=+ -bar ArgsByExtension
 \   execute 'args **/*.' . join([<f-args>], ' **/*.')
 command! TimeStamp execute 'normal "=strftime("%Y-%m-%dT%H:%M:%S")<C-M>P'
+command! -nargs=* -bar SilentMake
+\   execute 'silent make ' . join([<f-args>], ' ') . '| redraw!'
+command! -nargs=* -bar SilentMakeCwindow
+\   execute 'silent make ' . join([<f-args>], ' ') . '| redraw! | cw'
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " shortcut commands                                        "
@@ -261,7 +265,7 @@ nnoremap <Right> l
 nnoremap <Up> k
 nnoremap <Down> j
 
-nnoremap <Leader>mk :silent make 
+nnoremap <Leader>mk :SilentMakeCwindow 
 
 nnoremap [shortcut] <Nop>
 nmap <Space> [shortcut]
