@@ -138,8 +138,7 @@ let g:quickrun_config = {
 \       'outputter' : 'null',
 \   },
 \   'groovy' : {
-\       'type' : executable('groovyclient') ? 'groovy/groovyserv' :
-\                'groovy/groovy',
+\       'type' : 'groovy/groovy',
 \   },
 \   'groovy/groovyserv' : {
 \       'command' : 'groovyclient',
