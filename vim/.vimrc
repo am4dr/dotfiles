@@ -147,12 +147,6 @@ let g:quickrun_config = {
 \       'command' : 'groovy',
 \       'cmdopt' : '-c %{&fenc==#""?&enc:&fenc}',
 \   },
-\   'processing/groovy' : {
-\       'command' : 'groovy',
-\       'cmdopt' : '-c %{&fenc==#""?&enc:&fenc}',
-\       'runner/vimproc/updatetime' : 0,
-\       'outputter' : 'null',
-\   },
 \}
 if has('lua')
     let g:neocomplete#enable_at_startup = 1
