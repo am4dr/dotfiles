@@ -37,16 +37,16 @@ call dein#add('Shougo/unite.vim')
 call dein#add('Shougo/unite-session')
 call dein#add('Shougo/neomru.vim')
 call dein#add('Shougo/vimfiler.vim')
-call dein#add('Shougo/vimshell')
+"call dein#add('Shougo/vimshell')
 call dein#add('Shougo/vinarise.vim')
 call dein#add('tpope/vim-surround')
 call dein#add('tpope/vim-fugitive')
-call dein#add('koron/codic-vim')
+"call dein#add('koron/codic-vim')
 call dein#add('itchyny/lightline.vim')
 call dein#add('Shougo/neocomplete.vim', { 'if' : has('lua') })
 call dein#add('thinca/vim-quickrun')
 call dein#add('glidenote/memolist.vim')
-call dein#add('vim-scripts/autodate.vim')
+"call dein#add('vim-scripts/autodate.vim')
 call dein#add('fuenor/qfixgrep')
 call dein#add('osyo-manga/vim-over')
 call dein#add('kannokanno/previm')
@@ -54,8 +54,8 @@ call dein#add('tyru/open-browser.vim')
 call dein#add('https://gist.github.com/amadarain/35ba8308674c6a0a7526', {
 \   'name' : 'gtags.vim',
 \})
-call dein#add('rhysd/wandbox-vim')
-call dein#add('Shougo/junkfile.vim')
+"call dein#add('rhysd/wandbox-vim')
+"call dein#add('Shougo/junkfile.vim')
 call dein#add('vim-jp/vimdoc-ja')
 
 call dein#end()
@@ -121,7 +121,7 @@ let g:memolist_memo_date = '%Y-%m-%d %H:%M:%S'
 let g:memolist_template_dir_path = '~/vimfiles/misc/memolist_templates'
 let g:memolist_qfixgrep = 1
 let g:memolist_unite = 1
-let g:autodate_format = '%Y-%m-%d %H:%M:%S'
+"let g:autodate_format = '%Y-%m-%d %H:%M:%S'
 let g:previm_enable_realtime = 1
 let g:quickrun_config = {
 \   '_' : {
@@ -277,11 +277,11 @@ nnoremap [unite]m :<C-u>Unite file_mru<CR>
 nnoremap [unite]s :<C-u>Unite session<CR>
 nnoremap [unite]b :<C-u>Unite buffer<CR>
 
-nmap [shortcut]v [vimshell]
-nnoremap [vimshell] :<C-u>VimShell
-nnoremap [vimshell]s :<C-u>VimShell<CR>
-nnoremap [vimshell]p :<C-u>VimShellPop<CR>
-nnoremap [vimshell]b :<C-u>VimShellBufferDir<CR>
+"nmap [shortcut]v [vimshell]
+"nnoremap [vimshell] :<C-u>VimShell
+"nnoremap [vimshell]s :<C-u>VimShell<CR>
+"nnoremap [vimshell]p :<C-u>VimShellPop<CR>
+"nnoremap [vimshell]b :<C-u>VimShellBufferDir<CR>
 
 nmap [shortcut]o [overvim]
 nnoremap [overvim] :<C-u>OverCommandLine<CR>
@@ -291,3 +291,4 @@ nnoremap [syntastic]c :<C-u>SyntasticCheck<CR>
 nnoremap [syntastic]t :<C-u>SyntasticToggleMode<CR>
 
 nnoremap [shortcut]zz :<C-u>execute ':save ' . expand('~/ZatsuMemo/' . strftime('%Y-%m%d-%H%M') . '-' . getline('1') . '.txt')<CR>
+
