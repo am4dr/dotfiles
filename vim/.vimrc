@@ -224,10 +224,11 @@ command! -nargs=* -bar SilentMake
 command! -nargs=* -bar SilentMakeCwindow
 \   execute 'silent make ' . join([<f-args>], ' ') . '| redraw! | cw'
 
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" shortcut commands                                        "
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+nnoremap <Leader>mk :SilentMakeCwindow 
 
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" mappings                                                 "
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " escape into normal mode
 nmap <silent> <C-j> <Esc>
 imap <silent> <C-j> <Esc>
@@ -237,8 +238,13 @@ nnoremap <Right> l
 nnoremap <Up> k
 nnoremap <Down> j
 
-nnoremap <Leader>mk :SilentMakeCwindow 
-
+nnoremap [c :<C-u>cprevious<CR>
+nnoremap ]c :<C-u>cnext<CR>
+nnoremap [C :<C-u>cfirst<CR>
+nnoremap ]C :<C-u>clast<CR>
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" shortcut commands                                        "
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 nnoremap [shortcut] <Nop>
 nmap <Space> [shortcut]
 
