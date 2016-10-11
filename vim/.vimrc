@@ -1,70 +1,54 @@
 scriptencoding utf-8
 set nocompatible
-filetype off
-filetype plugin indent off
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Plugins                                                 "
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-set runtimepath^=~/vimfiles/dein/repos/github.com/Shougo/dein.vim
-"if dein#load_state(expand('~/vimfiles/dein/'))
-call dein#begin(expand('~/vimfiles/dein/'))
-call dein#add('Shougo/dein.vim')
+source ~/vimfiles/vimplug/vim-plug/plug.vim
+call plug#begin('~/vimfiles/vimplug')
+Plug 'junegunn/vim-plug'
 
 " syntax  """""""""""""""""""""""""""""""""""""""""""""""""
-call dein#add('tikhomirov/vim-glsl')
-call dein#add('scrooloose/syntastic', {
-\   'lazy' : 1,
-\   'on_cmd' : ['Syntastic']
-\})
-call dein#add('https://gist.github.com/amadarain/4e6fc1bade7c1add02e5', {
-\   'depends' : 'scrooloose/syntastic',
-\   'lazy' : 1,
-\   'name' : 'syntastic_groovy_groovyc.vim',
-\})
+Plug 'tikhomirov/vim-glsl'
+Plug 'scrooloose/syntastic', { 'on' : 'Syntastic' }
+"Plug 'https://gist.github.com/amadarain/4e6fc1bade7c1add02e5', {
+"\   'on' : 'Syntastic',
+"\   'as' : 'syntastic_groovy_groovyc.vim',
+"\   'do' : 'mkdir -p plugin; cp -f *.vim plugin/',
+"\}
 " colorscheme """""""""""""""""""""""""""""""""""""""""""""
-call dein#add('altercation/vim-colors-solarized')
-call dein#add('nanotech/jellybeans.vim')
-call dein#add('tomasr/molokai')
-call dein#add('vim-scripts/Wombat')
+Plug 'altercation/vim-colors-solarized'
+Plug 'nanotech/jellybeans.vim'
+Plug 'tomasr/molokai'
+Plug 'vim-scripts/Wombat'
 " colorscheme utility """""""""""""""""""""""""""""""""""""
-call dein#add('ujihisa/unite-colorscheme')
-call dein#add('vim-scripts/AfterColors.vim')
+Plug 'ujihisa/unite-colorscheme'
+Plug 'vim-scripts/AfterColors.vim'
 
 " other plugins """""""""""""""""""""""""""""""""""""""""""
-call dein#add('Shougo/vimproc', {'build': 'make'})
-call dein#add('Shougo/unite.vim')
-call dein#add('Shougo/unite-session')
-call dein#add('Shougo/neomru.vim')
-call dein#add('Shougo/vimfiler.vim')
-"call dein#add('Shougo/vimshell')
-call dein#add('Shougo/vinarise.vim')
-call dein#add('tpope/vim-surround')
-call dein#add('tpope/vim-fugitive')
-"call dein#add('koron/codic-vim')
-call dein#add('itchyny/lightline.vim')
-call dein#add('Shougo/neocomplete.vim', { 'if' : has('lua') })
-call dein#add('thinca/vim-quickrun')
-call dein#add('glidenote/memolist.vim')
-"call dein#add('vim-scripts/autodate.vim')
-call dein#add('fuenor/qfixgrep')
-call dein#add('osyo-manga/vim-over')
-call dein#add('kannokanno/previm')
-call dein#add('tyru/open-browser.vim')
-call dein#add('https://gist.github.com/amadarain/35ba8308674c6a0a7526', {
-\   'name' : 'gtags.vim',
-\})
-"call dein#add('rhysd/wandbox-vim')
-"call dein#add('Shougo/junkfile.vim')
-call dein#add('vim-jp/vimdoc-ja')
+Plug 'Shougo/unite.vim'
+Plug 'Shougo/unite-session'
+Plug 'Shougo/neomru.vim'
+Plug 'Shougo/vimfiler.vim'
+Plug 'Shougo/vinarise.vim'
+Plug 'tpope/vim-surround'
+Plug 'tpope/vim-fugitive'
+Plug 'itchyny/lightline.vim'
+Plug 'Shougo/neocomplete.vim', has('lua') ? {} : { 'on' : [] }
+Plug 'thinca/vim-quickrun'
+Plug 'glidenote/memolist.vim'
+Plug 'fuenor/qfixgrep'
+Plug 'osyo-manga/vim-over'
+Plug 'kannokanno/previm'
+Plug 'tyru/open-browser.vim'
+"Plug 'https://gist.github.com/amadarain/35ba8308674c6a0a7526', {
+"\   'as' : 'gtags.vim',
+"\   'do' : 'mkdir -p plugin; cp -f *.vim plugin/',
+"\}
+Plug 'vim-jp/vimdoc-ja'
 
-call dein#end()
-"endif " for dein#load_state()
-"call dein#save_state()
-"if dein#check_install()
-"    call dein#install()
-"endif
-
+call plug#end()
+delc PlugUpgrade
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Plugin config                                           "
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -155,8 +139,6 @@ if has('lua')
     let g:neocomplete#auto_completion_start_length = 7
 endif
 
-filetype plugin indent on
-
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Vim Settings                                            "
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -186,7 +168,6 @@ else
 endif
 " syntax highlighting
 let java_highlight_java_lang_ids=1
-syntax on " calls ':filetype on' internally
 
 if has('win32') && !has('gui_running')
     set nocursorline
@@ -276,12 +257,6 @@ nnoremap [unite]r :<C-u>Unite file_rec<CR>
 nnoremap [unite]m :<C-u>Unite file_mru<CR>
 nnoremap [unite]s :<C-u>Unite session<CR>
 nnoremap [unite]b :<C-u>Unite buffer<CR>
-
-"nmap [shortcut]v [vimshell]
-"nnoremap [vimshell] :<C-u>VimShell
-"nnoremap [vimshell]s :<C-u>VimShell<CR>
-"nnoremap [vimshell]p :<C-u>VimShellPop<CR>
-"nnoremap [vimshell]b :<C-u>VimShellBufferDir<CR>
 
 nmap [shortcut]o [overvim]
 nnoremap [overvim] :<C-u>OverCommandLine<CR>
