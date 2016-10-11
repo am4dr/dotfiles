@@ -37,7 +37,6 @@ Plug 'itchyny/lightline.vim'
 Plug 'Shougo/neocomplete.vim', has('lua') ? {} : { 'on' : [] }
 Plug 'thinca/vim-quickrun'
 Plug 'glidenote/memolist.vim'
-Plug 'fuenor/qfixgrep'
 Plug 'osyo-manga/vim-over'
 Plug 'kannokanno/previm'
 Plug 'tyru/open-browser.vim'
@@ -103,7 +102,6 @@ endfunction
 let g:memolist_path = '~/works/memo'
 let g:memolist_memo_date = '%Y-%m-%d %H:%M:%S'
 let g:memolist_template_dir_path = '~/vimfiles/misc/memolist_templates'
-let g:memolist_qfixgrep = 1
 let g:memolist_unite = 1
 "let g:autodate_format = '%Y-%m-%d %H:%M:%S'
 let g:previm_enable_realtime = 1
