@@ -168,7 +168,6 @@ else
     set cursorline
 endif
 set ruler
-set number
 set hlsearch
 set scrolloff=1
 set laststatus=2
