@@ -56,7 +56,6 @@ let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_loc_list_height = 5
 let g:syntastic_mode_map = { 'mode': 'passive' }
 let g:syntastic_java_javac_options = '-J-Dfile.encoding=utf-8'
-let g:vimproc#download_windows_dll = 1
 let g:unite_enable_start_insert = 1
 let g:vimfiler_as_default_explorer = 1
 let g:vimfiler_time_format = "%m%d %H%M"
@@ -103,15 +102,12 @@ let g:memolist_path = '~/works/memo'
 let g:memolist_memo_date = '%Y-%m-%d %H:%M:%S'
 let g:memolist_template_dir_path = '~/vimfiles/misc/memolist_templates'
 let g:memolist_unite = 1
-"let g:autodate_format = '%Y-%m-%d %H:%M:%S'
 let g:previm_enable_realtime = 1
 let g:quickrun_config = {
 \   '_' : {
 \       'outputter/buffer/split' : ':botright 10sp',
 \       'outputter/buffer/close_on_empty' : 1,
 \       'hook/time/enable' : 1,
-\       'runner' : 'vimproc',
-\       'runner/vimproc/updatetime' : 500
 \   },
 \   'markdown' : { 'type' : 'markdown/previm'},
 \   'markdown/previm' : {
