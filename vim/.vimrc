@@ -264,4 +264,4 @@ nnoremap [syntastic]c :<C-u>SyntasticCheck<CR>
 nnoremap [syntastic]t :<C-u>SyntasticToggleMode<CR>
 
 nnoremap [shortcut]zz :<C-u>execute ':save ' . expand('~/ZatsuMemo/' . strftime('%Y-%m%d-%H%M') . '-' . getline('1') . '.txt')<CR>
-
+nnoremap [shortcut]zo :<C-u>execute ':e ' . expand('~/ZatsuMemo/')<CR>
