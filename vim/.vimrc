@@ -19,8 +19,7 @@ Plug 'scrooloose/syntastic', { 'on' : 'Syntastic' }
 " colorscheme """""""""""""""""""""""""""""""""""""""""""""
 Plug 'altercation/vim-colors-solarized'
 Plug 'nanotech/jellybeans.vim'
-Plug 'tomasr/molokai'
-Plug 'vim-scripts/Wombat'
+Plug 'AlessandroYorba/Alduin'
 " colorscheme utility """""""""""""""""""""""""""""""""""""
 Plug 'ujihisa/unite-colorscheme'
 Plug 'vim-scripts/AfterColors.vim'
@@ -153,10 +152,10 @@ set imsearch=-1
 
 " appearance """"""""""""""""""""""""""""""""""""""""""""""
 " color
-set background=dark
 if has('win32')
     colorscheme default
 else
+    set background=dark
     set t_Co=256
     colorscheme jellybeans
 endif
