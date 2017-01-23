@@ -231,8 +231,20 @@ nnoremap <Down> j
 
 nnoremap [c :<C-u>cprevious<CR>
 nnoremap ]c :<C-u>cnext<CR>
-nnoremap [C :<C-u>cfirst<CR>
-nnoremap ]C :<C-u>clast<CR>
+nnoremap [C :<C-u>cpfile<CR>
+nnoremap ]C :<C-u>cnfile<CR>
+nnoremap [fc :<C-u>cfirst<CR>
+nnoremap ]lc :<C-u>clast<CR>
+nnoremap [l :<C-u>lprevious<CR>
+nnoremap ]l :<C-u>lnext<CR>
+nnoremap [L :<C-u>lpfile<CR>
+nnoremap ]L :<C-u>lnfile<CR>
+nnoremap [fl :<C-u>lfirst<CR>
+nnoremap ]ll :<C-u>llast<CR>
+nnoremap [a :<C-u>previous<CR>
+nnoremap ]a :<C-u>next<CR>
+nnoremap [fa :<C-u>first<CR>
+nnoremap ]fl :<C-u>last<CR>
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " shortcut commands                                        "
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""
