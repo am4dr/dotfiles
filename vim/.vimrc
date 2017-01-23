@@ -224,10 +224,6 @@ nnoremap <Leader>mk :SilentMakeCwindow
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " mappings                                                 "
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" escape into normal mode
-nmap <silent> <C-j> <Esc>
-imap <silent> <C-j> <Esc>
-
 nnoremap <Left> h
 nnoremap <Right> l
 nnoremap <Up> k
