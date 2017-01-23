@@ -17,27 +17,28 @@ Plug 'scrooloose/syntastic', { 'on' : 'Syntastic' }
 "\   'do' : 'mkdir -p plugin; cp -f *.vim plugin/',
 "\}
 " colorscheme """""""""""""""""""""""""""""""""""""""""""""
+Plug 'AlessandroYorba/Alduin'
 Plug 'altercation/vim-colors-solarized'
 Plug 'nanotech/jellybeans.vim'
-Plug 'AlessandroYorba/Alduin'
 " colorscheme utility """""""""""""""""""""""""""""""""""""
 Plug 'ujihisa/unite-colorscheme'
 Plug 'vim-scripts/AfterColors.vim'
 
 " other plugins """""""""""""""""""""""""""""""""""""""""""
-Plug 'Shougo/unite.vim'
-Plug 'Shougo/unite-session'
+Plug 'Shougo/neocomplete.vim', has('lua') ? {} : { 'on' : [] }
 Plug 'Shougo/neomru.vim'
+Plug 'Shougo/unite-session'
+Plug 'Shougo/unite.vim'
 Plug 'Shougo/vimfiler.vim'
 Plug 'Shougo/vinarise.vim'
-Plug 'tpope/vim-surround'
-Plug 'tpope/vim-fugitive'
-Plug 'itchyny/lightline.vim'
-Plug 'Shougo/neocomplete.vim', has('lua') ? {} : { 'on' : [] }
-Plug 'thinca/vim-quickrun'
+Plug 'editorconfig/editorconfig-vim'
 Plug 'glidenote/memolist.vim'
-Plug 'osyo-manga/vim-over'
+Plug 'itchyny/lightline.vim'
 Plug 'kannokanno/previm'
+Plug 'osyo-manga/vim-over'
+Plug 'thinca/vim-quickrun'
+Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-surround'
 Plug 'tyru/open-browser.vim'
 "Plug 'https://gist.github.com/amadarain/35ba8308674c6a0a7526', {
 "\   'as' : 'gtags.vim',
