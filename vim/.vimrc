@@ -244,7 +244,7 @@ nnoremap ]ll :<C-u>llast<CR>
 nnoremap [a :<C-u>previous<CR>
 nnoremap ]a :<C-u>next<CR>
 nnoremap [fa :<C-u>first<CR>
-nnoremap ]fl :<C-u>last<CR>
+nnoremap ]la :<C-u>last<CR>
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " shortcut commands                                        "
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""
