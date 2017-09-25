@@ -19,6 +19,7 @@ Plug 'scrooloose/syntastic', { 'on' : 'Syntastic' }
 " colorscheme """""""""""""""""""""""""""""""""""""""""""""
 Plug 'AlessandroYorba/Alduin'
 Plug 'altercation/vim-colors-solarized'
+Plug 'jeetsukumaran/vim-nefertiti'
 Plug 'nanotech/jellybeans.vim'
 " colorscheme utility """""""""""""""""""""""""""""""""""""
 Plug 'ujihisa/unite-colorscheme'
@@ -163,11 +164,6 @@ endif
 " syntax highlighting
 let java_highlight_java_lang_ids=1
 
-if has('win32') && !has('gui_running')
-    set nocursorline
-else
-    set cursorline
-endif
 set ruler
 set hlsearch
 set scrolloff=1
