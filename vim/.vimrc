@@ -134,6 +134,7 @@ if has('lua')
     let g:neocomplete#auto_completion_start_length = 7
 endif
 
+command! LoadReply runtime reply-terminal.vim
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Vim Settings                                            "
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -190,6 +191,7 @@ set incsearch
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Gocha Gocha                                              "
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+set visualbell
 " this command does not handle import errors yet
 function! s:useGradleAsMakeprg()
     set makeprg=gradle\ --daemon\ --quiet

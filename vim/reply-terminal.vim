@@ -23,9 +23,10 @@ if !exists("g:Reply_callback_triggers")
 endif
 let s:reply_callback_prefix = 'reply-vim-callback'
 function! s:reply_callback(ch, message)
-    let m = matchlist(a:message, s:reply_callback_prefix . ':\(\p*\)')
-    let subcmd = get(m, 1, v:null)
-    if subcmd != v:null
+    let i = 0
+    let m = matchlist(a:message, s:reply_callback_prefix . ':\(\p*\)', 0, i)
+    while m != [] && m[1] != ''
+        let subcmd = m[1]
         for s in keys(g:Reply_callback_triggers)
             let sm = matchlist(subcmd, '^' . s . ':\(\p*\)')
             let param = get(sm, 1, v:null)
@@ -33,7 +34,9 @@ function! s:reply_callback(ch, message)
                 call g:Reply_callback_triggers[s](param)
             endif
         endfor
-    endif
+        let i += 1
+        let m = matchlist(a:message, s:reply_callback_prefix . ':\(\p*\)', 0, i)
+    endwhile
 endfunction
 
 function! g:Reply_launch(opts)
@@ -94,6 +97,21 @@ function! g:Reply_fire_callback(term, trigger, param)
     call g:Reply_eval(a:term, ';' . body)
 endfunction
 
+function! g:Reply_fire_callback_by_eval(term, trigger, expr)
+    let body = '(println (str "$prefix$" ":" "$trigger$" ":" $expr$))'
+    let body = substitute(body, '\V$prefix$', s:reply_callback_prefix, '')
+    let body = substitute(body, '\V$trigger$', a:trigger, '')
+    let body = substitute(body, '\V$expr$', a:expr, '')
+    call Reply_eval(a:term, body)
+endfunction
+
+function! g:Reply_fire_callback_by_eval_list(term, trigger, expr)
+    let body = '(map (comp println (partial str "$prefix$" ":" "$trigger$" ":")) $expr$)'
+    let body = substitute(body, '\V$prefix$', s:reply_callback_prefix, '')
+    let body = substitute(body, '\V$trigger$', a:trigger, '')
+    let body = substitute(body, '\V$expr$', a:expr, '')
+    call Reply_eval(a:term, body)
+endfunction
 
 """ unnamed """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 if !exists('g:Reply_unnamed_term_opts')
@@ -139,3 +157,41 @@ let g:Reply_callback_triggers[s:slamhound_finished_trigger] = function('s:slamho
 
 command! SlamHound call s:slamhound()
 
+""" eastwood """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+let s:eastwood_lint_trigger = 'eastwood-lint'
+function! s:eastwood_lint()
+    let term = g:Reply_get_or_create_term({'name': 'eastwood-lint', 'term_opts': {"hidden": 1}})
+    let cwd = substitute(getcwd(), '\', '/', 'g')
+    " TODO add relative path for error
+    call g:Reply_eval(term,
+                \ "(require 'eastwood.lint)" .
+                \ '(defn get-relative-path [uri]' .
+                \   '(let [cwd (java.nio.file.Paths/get "' . cwd . '" (into-array [""]))' .
+                \         'uri-path (java.nio.file.Paths/get uri)]' .
+                \     '(.relativize cwd uri-path)))' .
+                \ '(defn add-relative-path [m] ' .
+                \   '(assoc m :relative-path (get-relative-path (:uri m))))' .
+                \ '(def fmt (partial clojure.string/join ":"))' .
+                \ '(defn fmt-waring [w]' .
+                \   '(fmt (map (add-relative-path w) [:relative-path :line :column :msg])))' .
+                \ '(def get-exception (comp :exception :err-data))' .
+                \ '(defn fmt-error [r]' .
+                \   '(when-let [ex (some-> r get-exception Throwable->map)]' .
+                \     '(fmt (conj (mapv (:data ex) [:file :line :column]) (:cause ex)))))' .
+                \ '')
+    cgetexpr ''
+    call g:Reply_fire_callback_by_eval_list(term, s:eastwood_lint_trigger,
+                \ '(let [r (eastwood.lint/lint {:source-paths ["src"]})]' .
+                \   '(conj (map fmt-waring (:warnings r)) (fmt-error r)))' .
+                \ '')
+endfunction
+
+function! s:eastwood_lint_emitted(param)
+    if a:param != ''
+        echom a:param
+        caddexpr a:param
+    endif
+endfunction
+let g:Reply_callback_triggers[s:eastwood_lint_trigger] = function('s:eastwood_lint_emitted')
+
+command! Eastwood call s:eastwood_lint()
