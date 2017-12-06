@@ -162,27 +162,29 @@ let s:eastwood_lint_trigger = 'eastwood-lint'
 function! s:eastwood_lint()
     let term = g:Reply_get_or_create_term({'name': 'eastwood-lint', 'term_opts': {"hidden": 1}})
     let cwd = substitute(getcwd(), '\', '/', 'g')
-    " TODO add relative path for error
     call g:Reply_eval(term,
                 \ "(require 'eastwood.lint)" .
                 \ '(defn get-relative-path [uri]' .
-                \   '(let [cwd (java.nio.file.Paths/get "' . cwd . '" (into-array [""]))' .
-                \         'uri-path (java.nio.file.Paths/get uri)]' .
-                \     '(.relativize cwd uri-path)))' .
-                \ '(defn add-relative-path [m] ' .
-                \   '(assoc m :relative-path (get-relative-path (:uri m))))' .
+                \ '  (let [cwd (.toPath (clojure.java.io/as-file "'. cwd .'"))' .
+                \ '        uri-path (java.nio.file.Paths/get uri)]' .
+                \ '    (.relativize cwd uri-path)))' .
                 \ '(def fmt (partial clojure.string/join ":"))' .
                 \ '(defn fmt-waring [w]' .
-                \   '(fmt (map (add-relative-path w) [:relative-path :line :column :msg])))' .
+                \ '  (fmt (map (assoc w :relative-path (get-relative-path (:uri w)))' .
+                \ '            [:relative-path :line :column :msg])))' .
                 \ '(def get-exception (comp :exception :err-data))' .
                 \ '(defn fmt-error [r]' .
-                \   '(when-let [ex (some-> r get-exception Throwable->map)]' .
-                \     '(fmt (conj (mapv (:data ex) [:file :line :column]) (:cause ex)))))' .
+                \ '  (when-let [ex (some-> r get-exception Throwable->map)]'. 
+                \ '    (let [data     (:data ex)' .
+                \ '          file-uri (.toURI (clojure.java.io/resource (:file data)))]' .
+                \ '      (fmt (conj (mapv (assoc data :relative-path (get-relative-path file-uri))' .
+                \ '                       [:relative-path :line :column])' .
+                \ '                 (:cause ex))))))' .
                 \ '')
     cgetexpr ''
     call g:Reply_fire_callback_by_eval_list(term, s:eastwood_lint_trigger,
                 \ '(let [r (eastwood.lint/lint {:source-paths ["src"]})]' .
-                \   '(conj (map fmt-waring (:warnings r)) (fmt-error r)))' .
+                \ '  (conj (map fmt-waring (:warnings r)) (fmt-error r)))' .
                 \ '')
 endfunction
 
