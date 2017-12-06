@@ -23,7 +23,7 @@ if !exists("g:Reply_callback_triggers")
 endif
 let s:reply_callback_prefix = 'reply-vim-callback'
 function! s:reply_callback(ch, message)
-    let i = 0
+    let i = 1
     let m = matchlist(a:message, s:reply_callback_prefix . ':\(\p*\)', 0, i)
     while m != [] && m[1] != ''
         let subcmd = m[1]
