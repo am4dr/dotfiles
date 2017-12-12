@@ -155,11 +155,10 @@ set imsearch=-1
 
 " appearance """"""""""""""""""""""""""""""""""""""""""""""
 " color
-if has('win32')
-    colorscheme default
+if &t_Co == 8
+    colorscheme delek
 else
     set background=dark
-    set t_Co=256
     colorscheme jellybeans
 endif
 " syntax highlighting
