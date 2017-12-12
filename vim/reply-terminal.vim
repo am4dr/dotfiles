@@ -168,18 +168,17 @@ function! s:eastwood_lint()
                 \ '  (let [cwd (.toPath (clojure.java.io/as-file "'. cwd .'"))' .
                 \ '        uri-path (java.nio.file.Paths/get uri)]' .
                 \ '    (.relativize cwd uri-path)))' .
-                \ '(def fmt (partial clojure.string/join ":"))' .
+                \ '(defn fmt [m] ' .
+                \ '  (clojure.string/join ":" (map m [:relative-path :line :column :msg])))' .
                 \ '(defn fmt-waring [w]' .
-                \ '  (fmt (map (assoc w :relative-path (get-relative-path (:uri w)))' .
-                \ '            [:relative-path :line :column :msg])))' .
+                \ '  (fmt (assoc w :relative-path (get-relative-path (:uri w)))))' .
                 \ '(def get-exception (comp :exception :err-data))' .
                 \ '(defn fmt-error [r]' .
                 \ '  (when-let [ex (some-> r get-exception Throwable->map)]'. 
                 \ '    (let [data     (:data ex)' .
                 \ '          file-uri (.toURI (clojure.java.io/resource (:file data)))]' .
-                \ '      (fmt (conj (mapv (assoc data :relative-path (get-relative-path file-uri))' .
-                \ '                       [:relative-path :line :column])' .
-                \ '                 (:cause ex))))))' .
+                \ '      (fmt (assoc data :relative-path (get-relative-path file-uri) ' .
+                \ '                       :msg           (:cause ex))))))' .
                 \ '')
     cgetexpr ''
     call g:Reply_fire_callback_by_eval_list(term, s:eastwood_lint_trigger,
