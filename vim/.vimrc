@@ -148,6 +148,7 @@ set encoding=utf-8
 set fileencodings=ucs-bom,utf-8,iso-2022-jp,euc-jp,sjis,cp932,latin1
 set fileformats=unix,dos
 set backupdir=~/vimfiles/tmp
+set directory=~/vimfiles/tmp//
 " turn off the IM
 set iminsert=0
 " use the iminsert value for imsearch
