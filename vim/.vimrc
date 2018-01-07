@@ -8,8 +8,10 @@ source ~/vimfiles/vimplug/vim-plug/plug.vim
 call plug#begin('~/vimfiles/vimplug')
 Plug 'junegunn/vim-plug'
 
+" language support """"""""""""""""""""""""""""""""""""""""
+Plug 'fatih/vim-go'
 " syntax  """""""""""""""""""""""""""""""""""""""""""""""""
-Plug 'tikhomirov/vim-glsl'
+Plug 'tikhomirov/vim-glsl', { 'for': 'glsl' }
 Plug 'scrooloose/syntastic', { 'on' : 'Syntastic' }
 "Plug 'https://gist.github.com/amadarain/4e6fc1bade7c1add02e5', {
 "\   'on' : 'Syntastic',
@@ -35,7 +37,7 @@ Plug 'Shougo/vinarise.vim'
 Plug 'editorconfig/editorconfig-vim'
 Plug 'glidenote/memolist.vim'
 Plug 'itchyny/lightline.vim'
-Plug 'kannokanno/previm'
+Plug 'kannokanno/previm', { 'for': 'markdown' }
 Plug 'osyo-manga/vim-over'
 Plug 'thinca/vim-quickrun'
 Plug 'tpope/vim-fugitive'
