@@ -189,6 +189,7 @@ nnoremap <silent> <C-l> :<C-u>nohlsearch<CR><C-l>
 
 "  """""""""""""""""""""""""""""""""""""""""""""""""""""""""
 set incsearch
+set spelllang=en,cjk
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Gocha Gocha                                              "
