@@ -54,6 +54,7 @@ delc PlugUpgrade
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Plugin config                                           "
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+let g:go_fmt_command = "goimports"
 let g:syntastic_check_on_wq = 0
 let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_loc_list_height = 5
