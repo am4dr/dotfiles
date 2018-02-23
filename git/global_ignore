@@ -1,78 +1,28 @@
-# 2017/02/18 updated with: https://github.com/github/gitignore/commit/3af1c2901fe89a2a75b6669a73b0a13e3f036182
+## mine ########################################################################
+.idea
+
+# 2018/02/24 updated with: https://github.com/github/gitignore/commit/3af1c2901fe89a2a75b6669a73b0a13e3f036182
 
 ## vim #########################################################################
-# swap
+# Swap
 [._]*.s[a-v][a-z]
 [._]*.sw[a-p]
 [._]s[a-v][a-z]
 [._]sw[a-p]
-# session
+
+# Session
 Session.vim
-# temporary
+
+# Temporary
 .netrwhist
 *~
-# auto-generated tag files
+# Auto-generated tag files
 tags
 
 
-## Eclipse #####################################################################
-.metadata
-bin/
-tmp/
-*.tmp
-*.bak
-*.swp
-*~.nib
-local.properties
-.settings/
-.loadpath
-.recommenders
-
-# Eclipse Core
-.project
-
-# External tool builders
-.externalToolBuilders/
-
-# Locally stored "Eclipse launch configurations"
-*.launch
-
-# PyDev specific (Python IDE for Eclipse)
-*.pydevproject
-
-# CDT-specific (C/C++ Development Tooling)
-.cproject
-
-# JDT-specific (Eclipse Java Development Tools)
-.classpath
-
-# Java annotation processor (APT)
-.factorypath
-
-# PDT-specific (PHP Development Tools)
-.buildpath
-
-# sbteclipse plugin
-.target
-
-# Tern plugin
-.tern-project
-
-# TeXlipse plugin
-.texlipse
-
-# STS (Spring Tool Suite)
-.springBeans
-
-# Code Recommenders
-.recommenders/
-
-
 ## JetBrains IDEs ##############################################################
-# Covers JetBrains IDEs: IntelliJ, RubyMine, PhpStorm, AppCode, PyCharm, CLion, Android Studio and Webstorm
+# Covers JetBrains IDEs: IntelliJ, RubyMine, PhpStorm, AppCode, PyCharm, CLion, Android Studio and WebStorm
 # Reference: https://intellij-support.jetbrains.com/hc/en-us/articles/206544839
-
-*.iml
 
 # User-specific stuff:
 .idea/**/workspace.xml
@@ -82,7 +32,6 @@ local.properties
 # Sensitive or high-churn files:
 .idea/**/dataSources/
 .idea/**/dataSources.ids
-.idea/**/dataSources.xml
 .idea/**/dataSources.local.xml
 .idea/**/sqlDataSources.xml
 .idea/**/dynamic.xml
@@ -91,6 +40,10 @@ local.properties
 # Gradle:
 .idea/**/gradle.xml
 .idea/**/libraries
+
+# CMake
+cmake-build-debug/
+cmake-build-release/
 
 # Mongo Explorer plugin:
 .idea/**/mongoSettings.xml
@@ -101,13 +54,16 @@ local.properties
 ## Plugin-specific files:
 
 # IntelliJ
-/out/
+out/
 
 # mpeltonen/sbt-idea plugin
 .idea_modules/
 
 # JIRA plugin
 atlassian-ide-plugin.xml
+
+# Cursive Clojure plugin
+.idea/replstate.xml
 
 # Crashlytics plugin (for Android Studio and IntelliJ)
 com_crashlytics_export_strings.xml
@@ -122,8 +78,11 @@ Thumbs.db
 ehthumbs.db
 ehthumbs_vista.db
 
+# Dump file
+*.stackdump
+
 # Folder config file
-Desktop.ini
+[Dd]esktop.ini
 
 # Recycle Bin used on file shares
 $RECYCLE.BIN/
