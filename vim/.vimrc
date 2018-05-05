@@ -279,3 +279,64 @@ nnoremap [syntastic]t :<C-u>SyntasticToggleMode<CR>
 
 nnoremap [shortcut]zz :<C-u>execute ':save ' . expand('~/ZatsuMemo/' . strftime('%Y-%m%d-%H%M') . '-' . getline('1') . '.txt')<CR>
 nnoremap [shortcut]zo :<C-u>execute ':e ' . expand('~/ZatsuMemo/')<CR>
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" buffer-local mappings                                    "
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+function! s:get_peer_file()
+    let peer = get(b:, 'peer_file', "")
+    if peer != ""
+        return peer
+    endif
+    let b:peer_file = get(b:, 'peer_func', {f -> ""})(expand('%:p'))
+    return b:peer_file
+endfunction
+
+function! s:edit_peer_file()
+    let peer = s:get_peer_file()
+    echom "peer: " . peer
+    if peer != ""
+        execute("edit " . peer)
+    endif
+endfunction
+
+nmap <silent> <Leader>a :<C-u>call <SID>edit_peer_file()<CR>
+
+
+" golang """""""""""""""""""""""""""""""""""""""""""""""""""
+autocmd FileType go nmap <buffer> <Leader>r <Plug>(go-run)
+autocmd FileType go nmap <buffer> <Leader>c <Plug>(go-coverage-toggle)
+autocmd Filetype go nmap <buffer> <Leader>a <Plug>(go-alternate-edit)
+autocmd Filetype go nmap <buffer> <Leader>l <Plug>(go-metalinter)
+autocmd Filetype go nmap <buffer> <Leader>s <Plug>(go-info)
+autocmd Filetype go nmap <buffer> <Leader>i <Plug>(go-install)
+" run :GoBuild or :GoTestCompile based on the go file
+function! s:build_go_files()
+  let l:file = expand('%')
+  if l:file =~# '^\f\+_test\.go$'
+    call go#test#Test(0, 1)
+  elseif l:file =~# '^\f\+\.go$'
+    call go#cmd#Build(0)
+  endif
+endfunction
+autocmd FileType go nmap <buffer> <leader>b :<C-u>call <SID>build_go_files()<CR>
+
+
+" clojure """"""""""""""""""""""""""""""""""""""""""""""""""
+function! s:is_clojure_test_file(file)
+    return match(a:file, '_test.clj$') != -1
+endfunction
+function! s:get_clojure_test_peer(file)
+    let result = a:file
+    if s:is_clojure_test_file(a:file)
+        let result = substitute(result, '_test.clj$', '.clj', '')
+        let result = substitute(result, '\<test\>', 'src', '')
+    else
+        let result = substitute(result, '.clj$', '_test.clj', '')
+        let result = substitute(result, '\<src\>', 'test', '')
+    endif
+    return result
+endfunction
+autocmd FileType clojure let b:peer_func = function('s:get_clojure_test_peer')
+
