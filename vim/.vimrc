@@ -135,6 +135,7 @@ if has('lua')
     let g:neocomplete#enable_smart_case = 1
     let g:neocomplete#enable_camel_case = 1
     let g:neocomplete#auto_completion_start_length = 7
+    let g:neocomplete#min_keyword_length = 5
 endif
 
 command! LoadReply runtime reply-terminal.vim
