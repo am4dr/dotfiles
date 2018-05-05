@@ -10,6 +10,7 @@ Plug 'junegunn/vim-plug'
 
 " language support """"""""""""""""""""""""""""""""""""""""
 Plug 'fatih/vim-go'
+Plug 'udalov/kotlin-vim'
 " syntax  """""""""""""""""""""""""""""""""""""""""""""""""
 Plug 'tikhomirov/vim-glsl', { 'for': 'glsl' }
 Plug 'scrooloose/syntastic', { 'on' : 'Syntastic' }
