@@ -248,6 +248,8 @@ nnoremap [a :<C-u>previous<CR>
 nnoremap ]a :<C-u>next<CR>
 nnoremap [fa :<C-u>first<CR>
 nnoremap ]la :<C-u>last<CR>
+
+nnoremap M `
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " shortcut commands                                        "
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""
