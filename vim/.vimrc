@@ -251,6 +251,7 @@ nnoremap [fa :<C-u>first<CR>
 nnoremap ]la :<C-u>last<CR>
 
 nnoremap M `
+nnoremap MM :<c-u>marks abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ<CR>
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " shortcut commands                                        "
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""
