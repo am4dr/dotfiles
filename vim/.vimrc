@@ -333,10 +333,10 @@ function! s:get_clojure_test_peer(file)
     let result = a:file
     if s:is_clojure_test_file(a:file)
         let result = substitute(result, '_test.clj$', '.clj', '')
-        let result = substitute(result, '\<test\>', 'src', '')
+        let result = substitute(result, '\v([\/])test([\/])', '\1src\2', '')
     else
         let result = substitute(result, '.clj$', '_test.clj', '')
-        let result = substitute(result, '\<src\>', 'test', '')
+        let result = substitute(result, '\v([\/])src([\/])', '\1test\2', '')
     endif
     return result
 endfunction
