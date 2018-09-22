@@ -11,6 +11,7 @@ Plug 'junegunn/vim-plug'
 " language support """"""""""""""""""""""""""""""""""""""""
 Plug 'fatih/vim-go'
 Plug 'udalov/kotlin-vim'
+Plug 'tpope/vim-fireplace', { 'for': 'clojure' }
 " syntax  """""""""""""""""""""""""""""""""""""""""""""""""
 Plug 'tikhomirov/vim-glsl', { 'for': 'glsl' }
 Plug 'scrooloose/syntastic', { 'on' : 'Syntastic' }
@@ -139,6 +140,7 @@ if has('lua')
     let g:neocomplete#min_keyword_length = 5
 endif
 
+let g:fireplace_no_maps = 1
 command! LoadReply runtime reply-terminal.vim
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Vim Settings                                            "
