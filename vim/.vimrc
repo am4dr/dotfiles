@@ -30,7 +30,7 @@ Plug 'ujihisa/unite-colorscheme'
 Plug 'vim-scripts/AfterColors.vim'
 
 " other plugins """""""""""""""""""""""""""""""""""""""""""
-Plug 'Shougo/neocomplete.vim', has('lua') ? {} : { 'on' : [] }
+"Plug 'Shougo/neocomplete.vim', has('lua') ? {} : { 'on' : [] }
 Plug 'Shougo/neomru.vim'
 Plug 'Shougo/unite-session'
 Plug 'Shougo/unite.vim'
