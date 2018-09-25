@@ -62,7 +62,6 @@ let g:syntastic_loc_list_height = 5
 let g:syntastic_mode_map = { 'mode': 'passive' }
 let g:syntastic_java_javac_options = '-J-Dfile.encoding=utf-8'
 let g:unite_enable_start_insert = 1
-let g:vimfiler_as_default_explorer = 1
 let g:vimfiler_time_format = "%m%d %H%M"
 let g:lightline = {
 \   'active' : {
