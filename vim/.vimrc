@@ -9,12 +9,12 @@ call plug#begin('~/vimfiles/vimplug')
 Plug 'junegunn/vim-plug'
 
 " language support """"""""""""""""""""""""""""""""""""""""
-Plug 'fatih/vim-go'
-Plug 'udalov/kotlin-vim'
+Plug 'fatih/vim-go', { 'for': 'go' }
+Plug 'udalov/kotlin-vim', { 'for': 'kotlin' }
 Plug 'tpope/vim-fireplace', { 'for': 'clojure' }
 " syntax  """""""""""""""""""""""""""""""""""""""""""""""""
 Plug 'tikhomirov/vim-glsl', { 'for': 'glsl' }
-Plug 'scrooloose/syntastic', { 'on' : 'Syntastic' }
+"Plug 'scrooloose/syntastic', { 'on' : 'Syntastic' }
 "Plug 'https://gist.github.com/amadarain/4e6fc1bade7c1add02e5', {
 "\   'on' : 'Syntastic',
 "\   'as' : 'syntastic_groovy_groovyc.vim',
@@ -35,7 +35,7 @@ Plug 'Shougo/neomru.vim'
 Plug 'Shougo/unite-session'
 Plug 'Shougo/unite.vim'
 Plug 'Shougo/vimfiler.vim'
-Plug 'Shougo/vinarise.vim'
+Plug 'Shougo/vinarise.vim', { 'on' : 'Vinarise' }
 Plug 'editorconfig/editorconfig-vim'
 Plug 'glidenote/memolist.vim'
 Plug 'itchyny/lightline.vim'
