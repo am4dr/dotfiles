@@ -12,3 +12,5 @@ set guioptions-=R   " スクロールバーの非表示(分割時のみ右)
 set guioptions-=e   " タブをCUI風に
 
 set t_vb=
+
+inoremap <silent> <Esc> <Esc>:set iminsert=0<CR>
