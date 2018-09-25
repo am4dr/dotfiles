@@ -14,12 +14,6 @@ Plug 'udalov/kotlin-vim', { 'for': 'kotlin' }
 Plug 'tpope/vim-fireplace', { 'for': 'clojure' }
 " syntax  """""""""""""""""""""""""""""""""""""""""""""""""
 Plug 'tikhomirov/vim-glsl', { 'for': 'glsl' }
-"Plug 'scrooloose/syntastic', { 'on' : 'Syntastic' }
-"Plug 'https://gist.github.com/amadarain/4e6fc1bade7c1add02e5', {
-"\   'on' : 'Syntastic',
-"\   'as' : 'syntastic_groovy_groovyc.vim',
-"\   'do' : 'mkdir -p plugin; cp -f *.vim plugin/',
-"\}
 " colorscheme """""""""""""""""""""""""""""""""""""""""""""
 Plug 'AlessandroYorba/Alduin'
 Plug 'altercation/vim-colors-solarized'
@@ -30,7 +24,6 @@ Plug 'ujihisa/unite-colorscheme'
 Plug 'vim-scripts/AfterColors.vim'
 
 " other plugins """""""""""""""""""""""""""""""""""""""""""
-"Plug 'Shougo/neocomplete.vim', has('lua') ? {} : { 'on' : [] }
 Plug 'Shougo/unite-session'
 Plug 'Shougo/unite.vim'
 Plug 'Shougo/vimfiler.vim'
@@ -44,10 +37,6 @@ Plug 'thinca/vim-quickrun'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-surround'
 Plug 'tyru/open-browser.vim'
-"Plug 'https://gist.github.com/amadarain/35ba8308674c6a0a7526', {
-"\   'as' : 'gtags.vim',
-"\   'do' : 'mkdir -p plugin; cp -f *.vim plugin/',
-"\}
 Plug 'vim-jp/vimdoc-ja'
 
 call plug#end()
@@ -56,11 +45,6 @@ delc PlugUpgrade
 " Plugin config                                           "
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 let g:go_fmt_command = "goimports"
-let g:syntastic_check_on_wq = 0
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_loc_list_height = 5
-let g:syntastic_mode_map = { 'mode': 'passive' }
-let g:syntastic_java_javac_options = '-J-Dfile.encoding=utf-8'
 let g:unite_enable_start_insert = 1
 let g:vimfiler_time_format = "%m%d %H%M"
 let g:lightline = {
@@ -130,13 +114,6 @@ let g:quickrun_config = {
 \       'cmdopt' : '-c %{&fenc==#""?&enc:&fenc}',
 \   },
 \}
-if has('lua')
-    let g:neocomplete#enable_at_startup = 1
-    let g:neocomplete#enable_smart_case = 1
-    let g:neocomplete#enable_camel_case = 1
-    let g:neocomplete#auto_completion_start_length = 7
-    let g:neocomplete#min_keyword_length = 5
-endif
 
 let g:fireplace_no_maps = 1
 command! LoadReply runtime reply-terminal.vim
@@ -273,10 +250,6 @@ nnoremap [unite]b :<C-u>Unite buffer<CR>
 
 nmap [shortcut]o [overvim]
 nnoremap [overvim] :<C-u>OverCommandLine<CR>
-
-nmap [shortcut]s [syntastic]
-nnoremap [syntastic]c :<C-u>SyntasticCheck<CR>
-nnoremap [syntastic]t :<C-u>SyntasticToggleMode<CR>
 
 nnoremap [shortcut]zz :<C-u>execute ':save ' . expand('~/ZatsuMemo/' . strftime('%Y-%m%d-%H%M') . '-' . getline('1') . '.txt')<CR>
 nnoremap [shortcut]zo :<C-u>execute ':e ' . expand('~/ZatsuMemo/')<CR>
