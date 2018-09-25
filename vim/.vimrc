@@ -31,7 +31,6 @@ Plug 'vim-scripts/AfterColors.vim'
 
 " other plugins """""""""""""""""""""""""""""""""""""""""""
 "Plug 'Shougo/neocomplete.vim', has('lua') ? {} : { 'on' : [] }
-Plug 'Shougo/neomru.vim'
 Plug 'Shougo/unite-session'
 Plug 'Shougo/unite.vim'
 Plug 'Shougo/vimfiler.vim'
@@ -270,7 +269,6 @@ nmap [shortcut]u [unite]
 nnoremap [unite] :<C-u>Unite 
 nnoremap [unite]f :<C-u>Unite file<CR>
 nnoremap [unite]r :<C-u>Unite file_rec<CR>
-nnoremap [unite]m :<C-u>Unite file_mru<CR>
 nnoremap [unite]s :<C-u>Unite session<CR>
 nnoremap [unite]b :<C-u>Unite buffer<CR>
 
