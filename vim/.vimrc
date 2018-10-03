@@ -257,25 +257,72 @@ nnoremap [shortcut]zo :<C-u>execute ':e ' . expand('~/ZatsuMemo/')<CR>
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " buffer-local mappings                                    "
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+nmap <silent> <Leader>a :<C-u>call <SID>edit_peer_file()<CR>
+nmap <silent> <Leader>ga :<C-u>call <SID>goto_peer_file()<CR>
+nmap <silent> <Leader>gt :<C-u>call <SID>goto_terminal()<CR>
+nmap <silent> <Leader>rr :<C-u>call <SID>buffer_func('run')<CR>
+nmap <silent> <Leader>rt :<C-u>call <SID>buffer_func('run_tests')<CR>
+nmap <silent> <Leader>ee :<C-u>call <SID>buffer_func('evaluate_cursor')<CR>
+nmap <silent> <Leader>eb :<C-u>call <SID>buffer_func('evaluate_buffer')<CR>
+
+function! s:buffer_func(name)
+    let Func = get(b:, a:name)
+    if Func != 0
+        return Func()
+    elseif
+        echo 'b:' . a:name . ' not defined'
+        return v:null
+    endif
+endfunction
 
 function! s:get_peer_file()
     let peer = get(b:, 'peer_file', "")
     if peer != ""
         return peer
     endif
-    let b:peer_file = get(b:, 'peer_func', {f -> ""})(expand('%:p'))
+    let b:peer_file = get(b:, 'peer_func', {-> ""})(expand('%:p'))
     return b:peer_file
+endfunction
+
+function! s:goto_peer_file()
+    let peer = s:get_peer_file()
+    if peer != ""
+        let winnr = bufwinnr(peer)
+        if winnr > 0
+            execute(winnr . "wincmd w")
+        endif
+    endif
 endfunction
 
 function! s:edit_peer_file()
     let peer = s:get_peer_file()
-    echom "peer: " . peer
     if peer != ""
         execute("edit " . peer)
     endif
 endfunction
 
-nmap <silent> <Leader>a :<C-u>call <SID>edit_peer_file()<CR>
+
+function! s:goto_terminal()
+    let Get_winnr = get(b:, 'get_terminal_winnr')
+    if Get_winnr
+        let winnr = Get_winnr()
+        if winnr > 0
+            execute(winnr . "wincmd w")
+        endif
+        return
+    endif
+    call s:goto_first_terminal()
+endfunction
+
+function! s:goto_first_terminal()
+    for bufnr in term_list()
+        let winnr = bufwinnr(bufnr)
+        if winnr > 0
+            execute(winnr . "wincmd w")
+            return
+        endif
+    endfor
+endfunction
 
 
 " golang """""""""""""""""""""""""""""""""""""""""""""""""""
@@ -298,6 +345,11 @@ autocmd FileType go nmap <buffer> <leader>b :<C-u>call <SID>build_go_files()<CR>
 
 
 " clojure """"""""""""""""""""""""""""""""""""""""""""""""""
+autocmd FileType clojure let b:peer_func = function('s:get_clojure_test_peer')
+autocmd FileType clojure let b:run_tests = function('s:fireplace_run_tests')
+autocmd FileType clojure let b:evaluate_buffer = function('s:fireplace_evaluate_buffer')
+autocmd FileType clojure let b:evaluate_cursor = function('s:fireplace_evaluate_cursor')
+
 function! s:is_clojure_test_file(file)
     return match(a:file, '_test.clj$') != -1
 endfunction
@@ -312,5 +364,14 @@ function! s:get_clojure_test_peer(file)
     endif
     return result
 endfunction
-autocmd FileType clojure let b:peer_func = function('s:get_clojure_test_peer')
+
+function! s:fireplace_evaluate_buffer()
+    execute('%Eval')
+endfunction
+function! s:fireplace_evaluate_cursor()
+    execute('Eval')
+endfunction
+function! s:fireplace_run_tests()
+    execute('RunTests')
+endfunction
 
