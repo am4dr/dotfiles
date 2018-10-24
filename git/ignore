@@ -1,6 +1,13 @@
 ## mine ########################################################################
+untracked/
 .idea
 *.iml
+
+## clojure #####################################################################
+.cpcache
+.nrepl-port
+.rebel_readline_history
+
 
 # 2018/02/24 updated with: https://github.com/github/gitignore/commit/3af1c2901fe89a2a75b6669a73b0a13e3f036182
 
