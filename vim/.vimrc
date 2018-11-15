@@ -119,7 +119,6 @@ let g:quickrun_config = {
             \}
 
 let g:fireplace_no_maps = 1
-command! LoadReply runtime reply-terminal.vim
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Vim Settings                                            "
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""
