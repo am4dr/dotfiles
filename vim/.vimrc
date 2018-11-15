@@ -51,38 +51,38 @@ let g:go_fmt_command = "goimports"
 let g:unite_enable_start_insert = 1
 let g:vimfiler_time_format = "%m%d %H%M"
 let g:lightline = {
-\   'active' : {
-\       'left'  : [ ['mode', 'paste'],
-\                   ['readonly', 'filename', 'modified'] ],
-\       'right' : [ ['percent', 'lineinfo'],
-\                   ['filetype'],
-\                   ['fileformat', 'fileencoding'] ],
-\   },
-\   'inactive' : {
-\       'left'  : [ ['filename'] ],
-\       'right' : [ ['percent', 'lineinfo'] ]
-\   },
-\   'component_function' : {
-\       'fileformat' : 'LLFileFormat',
-\       'fileencoding': 'LLFileEncoding',
-\   },
-\   'colorscheme': 'jellybeans',
-\   'mode_map': {
-\      'n' : 'N',
-\      'i' : 'I',
-\      'R' : 'R',
-\      'v' : 'V',
-\      'V' : 'VL',
-\      "\<C-v>" : 'VB',
-\   },
-\   'subseparator' : { 'left' : '', 'right' : '' },
-\}
+            \   'active' : {
+            \       'left'  : [ ['mode', 'paste'],
+            \                   ['readonly', 'filename', 'modified'] ],
+            \       'right' : [ ['percent', 'lineinfo'],
+            \                   ['filetype'],
+            \                   ['fileformat', 'fileencoding'] ],
+            \   },
+            \   'inactive' : {
+            \       'left'  : [ ['filename'] ],
+            \       'right' : [ ['percent', 'lineinfo'] ]
+            \   },
+            \   'component_function' : {
+            \       'fileformat' : 'LLFileFormat',
+            \       'fileencoding': 'LLFileEncoding',
+            \   },
+            \   'colorscheme': 'jellybeans',
+            \   'mode_map': {
+            \      'n' : 'N',
+            \      'i' : 'I',
+            \      'R' : 'R',
+            \      'v' : 'V',
+            \      'V' : 'VL',
+            \      "\<C-v>" : 'VB',
+            \   },
+            \   'subseparator' : { 'left' : '', 'right' : '' },
+            \}
 function! LLFileFormat()
     let ff = &fileformat
     return ff == 'unix' ? 'NL' :
-        \  ff == 'dos'  ? 'CN' :
-        \  ff == 'mac'  ? 'CR' :
-        \  ff
+                \ ff == 'dos'  ? 'CN' :
+                \ ff == 'mac'  ? 'CR' :
+                \ ff
 endfunction
 function! LLFileEncoding()
     let fe = &fileencoding
@@ -95,28 +95,28 @@ let g:memolist_template_dir_path = '~/vimfiles/misc/memolist_templates'
 let g:memolist_unite = 1
 let g:previm_enable_realtime = 1
 let g:quickrun_config = {
-\   '_' : {
-\       'outputter/buffer/split' : ':botright 10sp',
-\       'outputter/buffer/close_on_empty' : 1,
-\       'hook/time/enable' : 1,
-\   },
-\   'markdown' : { 'type' : 'markdown/previm'},
-\   'markdown/previm' : {
-\       'exec' : ':PrevimOpen',
-\       'runner' : 'vimscript',
-\       'outputter' : 'null',
-\   },
-\   'groovy' : {
-\       'type' : 'groovy/groovy',
-\   },
-\   'groovy/groovyserv' : {
-\       'command' : 'groovyclient',
-\   },
-\   'groovy/groovy' : {
-\       'command' : 'groovy',
-\       'cmdopt' : '-c %{&fenc==#""?&enc:&fenc}',
-\   },
-\}
+            \   '_' : {
+            \       'outputter/buffer/split' : ':botright 10sp',
+            \       'outputter/buffer/close_on_empty' : 1,
+            \       'hook/time/enable' : 1,
+            \   },
+            \   'markdown' : { 'type' : 'markdown/previm'},
+            \   'markdown/previm' : {
+            \       'exec' : ':PrevimOpen',
+            \       'runner' : 'vimscript',
+            \       'outputter' : 'null',
+            \   },
+            \   'groovy' : {
+            \       'type' : 'groovy/groovy',
+            \   },
+            \   'groovy/groovyserv' : {
+            \       'command' : 'groovyclient',
+            \   },
+            \   'groovy/groovy' : {
+            \       'command' : 'groovy',
+            \       'cmdopt' : '-c %{&fenc==#""?&enc:&fenc}',
+            \   },
+            \}
 
 let g:fireplace_no_maps = 1
 command! LoadReply runtime reply-terminal.vim
@@ -180,13 +180,13 @@ set spelllang=en,cjk
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 command! -nargs=+ -bar ArgsByExtension
-\   execute 'args **/*.' . join([<f-args>], ' **/*.')
+            \ execute 'args **/*.' . join([<f-args>], ' **/*.')
 command! TimeStamp
-\   execute 'normal "=strftime("%Y-%m-%dT%H:%M:%S")<C-M>P'
+            \ execute 'normal "=strftime("%Y-%m-%dT%H:%M:%S")<C-M>P'
 command! -nargs=* -bar SilentMake
-\   execute 'silent make ' . join([<f-args>], ' ') . '| redraw!'
+            \ execute 'silent make ' . join([<f-args>], ' ') . '| redraw!'
 command! -nargs=* -bar SilentMakeCwindow
-\   execute 'silent make ' . join([<f-args>], ' ') . '| redraw! | cw'
+            \ execute 'silent make ' . join([<f-args>], ' ') . '| redraw! | cw'
 
 nnoremap <Leader>mk :SilentMakeCwindow 
 
