@@ -154,6 +154,7 @@ set laststatus=2
 set cmdheight=2
 set display+=lastline
 set colorcolumn=81
+set visualbell
 
 " editting """"""""""""""""""""""""""""""""""""""""""""""""
 " backspace deletes fixed letters
@@ -174,27 +175,11 @@ set spelllang=en,cjk
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Gocha Gocha                                              "
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-set visualbell
-" this command does not handle import errors yet
-function! s:useGradleAsMakeprg()
-    set makeprg=gradle\ --daemon\ --quiet
-    let &errorformat = ''
-        \   . '%f: %l: %\%%([Static type checking] - %\)%\=%m @%.%#column %c.,'
-        \   . '%E%f: %l: %\%%([Static type checking] - %\)%\=%m,'
-        \   . '%-Z @ line %l%\, column %c.,'
-        \   . '%-Gstartup failed:,'
-        \   . '%+G  %.%#,'
-        \   . '%-G,'
-        \   . '%-G%.%#,'
-endfunction
-command! -nargs=0 UseGradle call s:useGradleAsMakeprg()
 
-function! s:args_by_extention(...) range abort
-    execute 'args **/*.' . join(a:000, ' **/*.')
-endfunction
 command! -nargs=+ -bar ArgsByExtension
 \   execute 'args **/*.' . join([<f-args>], ' **/*.')
-command! TimeStamp execute 'normal "=strftime("%Y-%m-%dT%H:%M:%S")<C-M>P'
+command! TimeStamp
+\   execute 'normal "=strftime("%Y-%m-%dT%H:%M:%S")<C-M>P'
 command! -nargs=* -bar SilentMake
 \   execute 'silent make ' . join([<f-args>], ' ') . '| redraw!'
 command! -nargs=* -bar SilentMakeCwindow
