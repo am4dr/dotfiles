@@ -216,6 +216,9 @@ nnoremap ]la :<C-u>last<CR>
 
 nnoremap M `
 nnoremap MM :<c-u>marks abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ<CR>
+
+nnoremap g/ /\<
+nnoremap g? ?\<
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " shortcut commands                                        "
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""
