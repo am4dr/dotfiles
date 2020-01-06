@@ -140,6 +140,10 @@ set imsearch=-1
 
 " appearance """"""""""""""""""""""""""""""""""""""""""""""
 " color
+if has("win32")
+    set t_Co=256
+endif
+
 if &t_Co == 8
     colorscheme delek
 else
