@@ -1,3 +1,4 @@
+scriptencoding utf-8
 if filereadable(expand('~/.gvimrc_local'))
     source ~/.gvimrc_local
 endif
