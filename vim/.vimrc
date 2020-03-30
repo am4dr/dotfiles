@@ -12,9 +12,14 @@ Plug 'junegunn/vim-plug'
 Plug '~/vimfiles/plugin-prototype/editor-action'
 
 " language support """"""""""""""""""""""""""""""""""""""""
-Plug 'fatih/vim-go', { 'for': 'go' }
-Plug 'udalov/kotlin-vim', { 'for': 'kotlin' }
-Plug 'tpope/vim-fireplace', { 'for': 'clojure' }
+"Plug 'fatih/vim-go', { 'for': 'go' }
+"Plug 'udalov/kotlin-vim', { 'for': 'kotlin' }
+"Plug 'tpope/vim-fireplace', { 'for': 'clojure' }
+Plug 'prabirshrestha/async.vim'
+Plug 'prabirshrestha/vim-lsp'
+Plug 'mattn/vim-lsp-settings'
+Plug 'prabirshrestha/asyncomplete.vim'
+Plug 'prabirshrestha/asyncomplete-lsp.vim'
 " colorscheme """""""""""""""""""""""""""""""""""""""""""""
 Plug 'AlessandroYorba/Alduin'
 Plug 'altercation/vim-colors-solarized'
