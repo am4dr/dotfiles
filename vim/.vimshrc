@@ -1,2 +1,0 @@
-alias e8 = exe --encoding=utf-8
-alias g = gradle --daemon

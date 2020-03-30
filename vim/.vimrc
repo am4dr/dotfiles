@@ -15,8 +15,6 @@ Plug '~/vimfiles/plugin-prototype/editor-action'
 Plug 'fatih/vim-go', { 'for': 'go' }
 Plug 'udalov/kotlin-vim', { 'for': 'kotlin' }
 Plug 'tpope/vim-fireplace', { 'for': 'clojure' }
-" syntax  """""""""""""""""""""""""""""""""""""""""""""""""
-Plug 'tikhomirov/vim-glsl', { 'for': 'glsl' }
 " colorscheme """""""""""""""""""""""""""""""""""""""""""""
 Plug 'AlessandroYorba/Alduin'
 Plug 'altercation/vim-colors-solarized'
@@ -24,15 +22,12 @@ Plug 'jeetsukumaran/vim-nefertiti'
 Plug 'nanotech/jellybeans.vim'
 " colorscheme utility """""""""""""""""""""""""""""""""""""
 Plug 'ujihisa/unite-colorscheme'
-Plug 'vim-scripts/AfterColors.vim'
 
 " other plugins """""""""""""""""""""""""""""""""""""""""""
-Plug 'Shougo/unite-session'
 Plug 'Shougo/unite.vim'
 Plug 'Shougo/vimfiler.vim'
 Plug 'Shougo/vinarise.vim', { 'on' : 'Vinarise' }
 Plug 'editorconfig/editorconfig-vim'
-Plug 'glidenote/memolist.vim'
 Plug 'itchyny/lightline.vim'
 Plug 'kannokanno/previm', { 'for': 'markdown' }
 Plug 'osyo-manga/vim-over'
@@ -89,10 +84,6 @@ function! LLFileEncoding()
     return fe == 'utf-8' ? 'u8' : fe
 endfunction
 
-let g:memolist_path = '~/works/memo'
-let g:memolist_memo_date = '%Y-%m-%d %H:%M:%S'
-let g:memolist_template_dir_path = '~/vimfiles/misc/memolist_templates'
-let g:memolist_unite = 1
 let g:previm_enable_realtime = 1
 let g:quickrun_config = {
             \   '_' : {
@@ -105,16 +96,6 @@ let g:quickrun_config = {
             \       'exec' : ':PrevimOpen',
             \       'runner' : 'vimscript',
             \       'outputter' : 'null',
-            \   },
-            \   'groovy' : {
-            \       'type' : 'groovy/groovy',
-            \   },
-            \   'groovy/groovyserv' : {
-            \       'command' : 'groovyclient',
-            \   },
-            \   'groovy/groovy' : {
-            \       'command' : 'groovy',
-            \       'cmdopt' : '-c %{&fenc==#""?&enc:&fenc}',
             \   },
             \}
 
@@ -229,12 +210,6 @@ nnoremap g? ?\<
 nnoremap [shortcut] <Nop>
 nmap <Space> [shortcut]
 
-nmap [shortcut]m [memolist]
-nnoremap [memolist] <Nop>
-nnoremap [memolist]l :<C-u>MemoList<CR>
-nnoremap [memolist]g :<C-u>MemoGrep 
-nnoremap [memolist]n :<C-u>MemoNew 
-
 nmap [shortcut]u [unite]
 nnoremap [unite] :<C-u>Unite 
 nnoremap [unite]f :<C-u>Unite file<CR>
@@ -244,9 +219,6 @@ nnoremap [unite]b :<C-u>Unite buffer<CR>
 
 nmap [shortcut]o [overvim]
 nnoremap [overvim] :<C-u>OverCommandLine<CR>
-
-nnoremap [shortcut]zz :<C-u>execute ':save ' . expand('~/ZatsuMemo/' . strftime('%Y-%m%d-%H%M') . '-' . getline('1') . '.txt')<CR>
-nnoremap [shortcut]zo :<C-u>execute ':e ' . expand('~/ZatsuMemo/')<CR>
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " buffer-local mappings                                    "
